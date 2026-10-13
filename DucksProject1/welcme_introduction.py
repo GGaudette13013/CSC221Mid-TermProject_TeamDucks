@@ -151,6 +151,18 @@ def display_instructions_welcome_HomeEnd():
     print(" o   o                                                                  o   o  ")
     print("  o o                                                                    o o   ")
     userInput = input("                                                                               ")
+    print("\t")
+    print("\t")
+    print("\t")
+    print("\t")
+    print("\t")
+    print("\t")
+    print("\t")
+    print("\t")
+    print("\t")
+    print("\t")
+    print("\t")
+    print("\t")
     return userInput                 
 
 
