@@ -3,6 +3,8 @@ Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
 Program name: simulation_mode#starter.py
 Description:  
 '''
+
+from DucksProject1 import userInput
 # DISPLAYS WELCOME SCREEN    
 def display_introduction_welcome_Home():
     print("  o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o  ")
@@ -260,9 +262,19 @@ def display_welcome_functionality():
     
     
     
+def display_userInput_functionality():
+    
+    days = userInput.getUserDays()
+    population = userInput.getUserBeehiveStarterPopulation(days)
+    
+    return days, population
     
     
     
     
     
-display_welcome_functionality()
+    
+    
+    
+    
+    
