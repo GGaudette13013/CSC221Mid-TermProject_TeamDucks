@@ -157,8 +157,13 @@ def realtimeMode_menu_operations():
 
 
 
-realtimeMode_menu(honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount)
 
+realtimeMode_menu_eventDisplay_Hornets()
+realtimeMode_menu_eventDisplay_BlackBear()
+realtimeMode_menu_eventDisplay_Drought()
+realtimeMode_menu_eventDisplay_Rainy()
+realtimeMode_menu_eventDisplay_Normal()
+realtimeMode_menu_eventDisplay_Beetle()
 '''
 realtimeMode_menu_eventDisplay_Hornets()
 realtimeMode_menu_eventDisplay_BlackBear()
@@ -167,4 +172,3 @@ realtimeMode_menu_eventDisplay_Drought()
 realtimeMode_menu_eventDisplay_Normal()
 realtimeMode_menu_eventDisplay_Beetle()
 '''
-realtimeMode_menu_operations()

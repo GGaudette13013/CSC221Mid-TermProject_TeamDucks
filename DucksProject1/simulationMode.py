@@ -5,4 +5,4 @@ Description:
 '''
 
 def simulationMode_menu():
-    
+    print("")
