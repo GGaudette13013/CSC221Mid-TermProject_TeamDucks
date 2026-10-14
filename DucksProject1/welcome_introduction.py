@@ -173,7 +173,7 @@ def display_instructions_userInput_DaysPopulationDispSet1():
 def display_instructions_userInput_DaysPopulationDispSet2(days):
     print("  o o                                                                    o o   ")
     print(" o   o                                                                  o   o  ")
-    print("  o o   The hive has only", days, "left before the snow starts falling.      o o   ")
+    print("  o o   The hive has only", days, "left before the snow starts falling.         o o   ")
     print("   o o                                                                    o o  ")
     print("  o   o                                                                  o   o ")
     print("   o o   We must decide what our beehive population is going to bee       o o  ")
@@ -264,7 +264,9 @@ def display_welcome_functionality():
     
 def display_userInput_functionality():
     
+    display_instructions_welcome_HomeSpace()
     days = userInput.getUserDays()
+    display_instructions_welcome_HomeSpace()
     population = userInput.getUserBeehiveStarterPopulation(days)
     
     return days, population
