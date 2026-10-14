@@ -151,19 +151,48 @@ def display_instructions_welcome_HomeEnd():
     print(" o   o                                                                  o   o  ")
     print("  o o                                                                    o o   ")
     userInput = input("                                                                               ")
-    print("\t")
-    print("\t")
-    print("\t")
-    print("\t")
-    print("\t")
-    print("\t")
-    print("\t")
-    print("\t")
-    print("\t")
-    print("\t")
-    print("\t")
-    print("\t")
     return userInput                 
+
+
+
+
+
+def display_instructions_userInput_DaysPopulationDispSet1():
+    print("  o o                                                                    o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o                                                                    o o   ")
+    print("   o o                                                                    o o  ")
+    print("  o   o                                                                  o   o ")
+    print("   o o     We need to decide how many days we will have to prepare        o o  ")
+    print("  o o             before the signs of winter start emerging.             o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o              E N T E R     D A Y S      B E L O W                  o o   ")
+    
+def display_instructions_userInput_DaysPopulationDispSet2(days):
+    print("  o o                                                                    o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o   The hive has only", days, "left before the snow starts falling.      o o   ")
+    print("   o o                                                                    o o  ")
+    print("  o   o                                                                  o   o ")
+    print("   o o   We must decide what our beehive population is going to bee       o o  ")
+    print("  o o            ( generally between 20,000 to 80,000 bees )             o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o        E N T E R     P O P U L A T I O N      B E L O W            o o   ")
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -223,6 +252,8 @@ def display_welcome_functionality():
                     userChoice = display_welcome_functionality_validation(userChoice)
                     display_instructions_welcome_HomeSpace()
                     display_instructions_welcome_HomeTail()
+                    display_instructions_welcome_HomeSpace()
+                    display_instructions_welcome_HomeSpace()
                     userChoice = "NotEnter"
         
         
