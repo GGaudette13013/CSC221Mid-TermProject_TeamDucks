@@ -3,33 +3,41 @@ Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
 Program name: userInput.py
 Description:  
 '''
+from DucksProject1 import welcome_introduction
 
 #  GET THE NUMBER OF DAYS IN WHICH THE USER CYCLES TASKS ANS FEEDS THE HIVE
 def getUserDays():
-    print("The time to prepare is nigh!! You must choose a time frame to prepare.")
-    userDays = int(input("How many days do you have to prepare before winter hits?"))
+    welcome_introduction.display_instructions_userInput_DaysPopulationDispSet1()
+    userDays = int(input("                                                                                      "))
     while userDays < 7 or userDays > 28:
-        print("The time frame must be between a week and a month span.")
-        userDays = int(input("How many days do you have to prepare before winter hits?"))
+        
+        print("  o o                                                                    o o   ")
+        print(" o   o    The number of days must be between a week and a month span    o   o  ")
+        print("  o o              E N T E R     D A Y S      B E L O W                  o o   ")
+        
+        userDays = int(input("                                      "))
         
     return userDays
+
+
 
 
 
 # GETS USER STARTER POPULATION
 def getUserBeehiveStarterPopulation(days):
     
+    welcome_introduction.display_instructions_userInput_DaysPopulationDispSet2(days)
     
     
-    print("The hive has only", days, "left before the snow starts falling.")
-    print("You must decide what the beehive starter population is before we start preparing. ")
-    
-    userPopulation = int(input("What is the beehive population (i.e. 50000)? "))
+    userPopulation = int(input("                                                            "))
     
     while userPopulation < 1000 or userPopulation > 100000:
-        print("The population is not in the range of permitted population. Choose another population")
-        print("The average population is 20,000 to 80,000 bees. ")
-        userPopulation = int(input("What is the beehive population (i.e. 50000)? "))
+        
+        print("  o o     The population is not in the range of permitted population.    o o   ")
+        print(" o   o   Choose population ( average is between 20,000 and 80,000 )     o   o  ")
+        print("  o o        E N T E R     P O P U L A T I O N      B E L O W            o o   ")
+        
+        userPopulation = int(input("                                 "))
         
     return userPopulation
 
