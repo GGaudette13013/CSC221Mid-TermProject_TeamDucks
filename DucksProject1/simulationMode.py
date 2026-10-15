@@ -1,8 +1,5 @@
 '''
-Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
-Program name: simulation_mode#starter.py
-Description:  
-'''
+Created on Oct 14, 2026
 
-def simulationMode_menu():
-    print("")
+@author: Gideon
+'''

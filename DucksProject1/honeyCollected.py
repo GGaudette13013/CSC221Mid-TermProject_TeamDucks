@@ -20,7 +20,7 @@ def totalHoney_accumulator(honeyAdd, starterPopulation):
 
 
 
-def calcNectar_production(foraging_bees):
+def calcHoney_production(foraging_bees):
     PER_BEE_NECTAR * foraging_bees
     
     
