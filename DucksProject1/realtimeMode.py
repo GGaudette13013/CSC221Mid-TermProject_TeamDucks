@@ -3,6 +3,10 @@ Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
 Program name: simulation_mode#starter.py
 Description:  
 '''
+from DucksProject1 import main
+from DucksProject1 import userInput
+from DucksProject1 import userTaskExecution
+
 
 def realtimeMode_menu(honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount):
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o   ")
