@@ -3,7 +3,7 @@ Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
 Program name: simulation_mode#starter.py
 Description:  
 '''
-from DucksProject1 import main
+
 from DucksProject1 import userInput
 from DucksProject1 import userTaskExecution
 
@@ -19,8 +19,25 @@ def realtimeMode_menu(honeyTotal, nectarProduction, totalBeehivePopulation, tota
     print("                                                                                 o                       o  ")
     print("                                                                                  o o  o o  o o  o o  o o   ")
     
-    
-    
+'''
+honeyTotal                    -    totalHoney_accumulator(honeyAdd, starterPopulation)
+nectarProduction              -    calcHoney_production(foraging_bees)
+totalBeehivePopulation        -    totalPopulation_accumulator(population)
+totalBeesForageing            -    foragingPopulation_accumulators(beesSentToForage)
+TotalBeeDefenceCount          -    defensePopulation_accumulators(beesSentToDefense)
+
+
+
+
+'''
+
+
+
+
+
+
+
+
 def realtimeMode_menu_eventDisplay_Hornets():
     print("          ooooo     ..                           *                                    ")
     print("         oo..:oo    :.:.  *    *                                                      ")
@@ -155,7 +172,16 @@ def realtimeMode_menu_operations():
 
 
 
-
+#def display_realtimeMode_functionality(honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount):
+#    realtimeMode_menu(honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount):
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 

@@ -9,11 +9,11 @@ PER_BEE_NECTAR = 0.00072
 
 
 def totalHoney_accumulator(honeyAdd, starterPopulation):
-    if totalHoney == 0:
+    if honeyAdd == 0:
         totalHoney = starterPopulation
-    
     else:
         totalHoney = totalHoney + honeyAdd
+        
     
     
     return totalHoney
@@ -21,9 +21,19 @@ def totalHoney_accumulator(honeyAdd, starterPopulation):
 
 
 def calcHoney_production(foraging_bees):
-    PER_BEE_NECTAR * foraging_bees
+    dailyHoney = PER_BEE_NECTAR * foraging_bees
+    
+    return dailyHoney
     
     
+    
+
+    
+    
+    
+    
+    
+
     
     
     
