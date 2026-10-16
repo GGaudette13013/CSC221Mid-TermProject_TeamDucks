@@ -88,6 +88,30 @@ def userTaskIdentification(task):
 
 
 
+def getUserForagePopulation():
+    print("  o o                                                                o o       ")
+    print(" o   o                                                              o   o      ")
+    print("  o o                                                                 o o      ")
+    print("   o o                                                                 o o     ")
+    print("  o   o                                                               o   o    ")
+    print("   o o                                                                 o o     ")
+    print("  o o                                                                   o o    ")
+    print(" o   o                                                                 o   o   ")
+    print("  o o                                                                   o o    ")
+    print("  o o                                                                    o o   ")
+    print(" o   o           Enter the number of bees from your population          o   o  ")
+    print("  o o      you want to send to go foraging ( the maximum is 40,000 )     o o   ")
+    print("   o o                                                                    o o  ")
+    print("  o   o                                                                  o   o ")
+    print("   o o                                                                    o o  ")
+    print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o                                                                    o o   ")
+    
+    userInput = input("                                    ")
+    
+    return userInput
+    
 
 
 
