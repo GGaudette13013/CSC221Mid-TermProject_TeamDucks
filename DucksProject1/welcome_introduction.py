@@ -260,6 +260,15 @@ def display_instructions_userInput_ModeSelectorDispset3():
 
 
 
+def display_instructions_userInput_ModeSelectorDispset1_functionality_validation(game_mode):
+    while game_mode != "S" and game_mode != "R":
+        print("   o                       i n v a l i d      m o d e   ")
+        print("  o o   To use simulation mode press        To use realtime mode press   o o   ")
+        print(" o   o                S                                   R             o   o  ")
+        print("  o o              E N T E R     M O D E      B E L O W                  o o   ")
+        game_mode = input("                                    ")
+    
+    return game_mode
 
 
 
