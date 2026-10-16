@@ -20,17 +20,35 @@ def main():
     welcome_introduction.display_welcome_functionality()
     welcome_introduction.display_userInput_functionality()
     
-    # accumulates all the running totals including honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount
+    # displays game mode
     
-    
-    # Displays updated info on info station
-    
-    
-    # Getting user task
-    task = getUserTask()
-    getUserTaskValidation(task)
-    
-    
+    game_mode = welcome_introduction.display_instructions_userInput_ModeSelector_functionality()
+    if game_mode == "R":
+        # realtime mode starts here 
+            
+        
+        # accumulates all the running totals including honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount
+        
+        
+        # Displays updated info on info station
+        
+        
+        # Getting user task
+        task = getUserTask()
+        getUserTaskValidation(task)
+        
+    else:
+        # simulation mode starts here 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 main()
     
     

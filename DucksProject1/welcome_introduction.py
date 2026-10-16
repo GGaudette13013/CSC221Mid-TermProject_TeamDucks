@@ -193,7 +193,7 @@ def display_instructions_userInput_ModeSelectorDispset1():
     print("   o o                                                                    o o  ")
     print("  o   o                Which mode would you like to try?                 o   o ")
     print("   o o       Simulation  mode                       Realtime  mode        o o  ")
-    print("  o o                                                                    o o   ")
+    print("  o o           ENTER S                                ENTER R           o o   ")
     print(" o   o                                                                  o   o  ")
     print("  o o              E N T E R     M O D E      B E L O W                  o o   ")
     mode = input("                                    ")
@@ -201,6 +201,62 @@ def display_instructions_userInput_ModeSelectorDispset1():
     return mode
     
     
+def display_instructions_userInput_ModeSelectorDispset2():
+    
+    print("  o o                                                                    o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o               ooooo     ..          ...    8    .                  o o   ")
+    print("   o o             oo..:oo    :.:.       .  :.  888    ..                 o o  ")
+    print("  o   o           oo.::.:oo   .:: . .:.   .      |       .               o   o ")
+    print("   o o            oo:.:.:::.:.  .  .   . o    o  |   o  O                 o o  ")
+    print("  o o             ooooooooo              |    |  |  /   |                o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o                                                                    o o   ")
+    print("  o o                                                                    o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o                    Welcome to realtime mode                        o o   ")
+    print("   o o                     To begin press Enter . . .                     o o  ")
+    print("  o   o                                                                  o   o ")
+    print("   o o                                                                    o o  ")
+    print("  o o             P R E S S    E N T E R   T O   S T A R T               o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o                                                                    o o   ")
+    userInput = input("                                    ")
+    return userInput                 
+
+
+def display_instructions_userInput_ModeSelectorDispset3():
+    
+    print("  o o                                                                    o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o               ooooo     ..          ...    8    .                  o o   ")
+    print("   o o             oo..:oo    :.:.       .  :.  888    ..                 o o  ")
+    print("  o   o           oo.::.:oo   .:: . .:.   .      |       .               o   o ")
+    print("   o o            oo:.:.:::.:.  .  .   . o    o  |   o  O                 o o  ")
+    print("  o o             ooooooooo              |    |  |  /   |                o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o                                                                    o o   ")
+    print("  o o                                                                    o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o                    Welcome to simulation mode                      o o   ")
+    print("   o o                     To begin press Enter . . .                     o o  ")
+    print("  o   o                                                                  o   o ")
+    print("   o o                                                                    o o  ")
+    print("  o o             P R E S S    E N T E R   T O   S T A R T               o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o                                                                    o o   ")
+    userInput = input("                                    ")
+    return userInput                 
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 
@@ -213,12 +269,13 @@ def display_instructions_userInput_ModeSelectorDispset1():
 
 
 
+    return gameMode
 
 
 # VALIDATES USER INPUT AND LOOPS UNTIL CORRECT KEYPRESS
 def display_welcome_functionality_validation(dataInput):    
     while dataInput != "":
-        dataInput = input("  o o          P R E S S     E N T E R   T O   C O N T I N U E           o o   \n o   o                                                                  o   o  \n  o o                                                                    o o")      
+        dataInput = input("  o o             P R E S S    E N T E R   T O   S T A R T               o o   ")      
     
     return dataInput
     
