@@ -114,6 +114,30 @@ def getUserForagePopulation():
     
 
 
+def getUserDefensePopulation():
+    print("  o o                                                                o o       ")
+    print(" o   o                                                              o   o      ")
+    print("  o o                                                                 o o      ")
+    print("   o o                                                                 o o     ")
+    print("  o   o                                                               o   o    ")
+    print("   o o                                                                 o o     ")
+    print("  o o                                                                   o o    ")
+    print(" o   o                                                                 o   o   ")
+    print("  o o                                                                   o o    ")
+    print("  o o                                                                    o o   ")
+    print(" o   o            Enter the number of bees you want to assign           o   o  ")
+    print("  o o             to defending the hive ( the maximum is 600 )           o o   ")
+    print("   o o                                                                    o o  ")
+    print("  o   o         ( The average hive has a defense of 2000 bees )          o   o ")
+    print("   o o                                                                    o o  ")
+    print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o                                                                    o o   ")
+    
+    userInput = input("                                    ")
+    
+    return userInput
+    
 
 
 
