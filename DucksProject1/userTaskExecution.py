@@ -14,7 +14,7 @@ def getUserTask():
     print(" o   o ")
     print("  o o   o o  o o  o o  o o  o o  o o  o o")
     print(" o   o     E N T E R         T A S K     o")
-    userTask = input("  o o                ")
+    userTask = input(" o o                                ")
     
     return userTask
     
@@ -112,6 +112,33 @@ def getUserForagePopulation():
     
     return userInput
     
+    
+    
+def getUserCreateBeesPopulation():
+    print("  o o                                                                o o       ")
+    print(" o   o                                                              o   o      ")
+    print("  o o                                                                 o o      ")
+    print("   o o                                                                 o o     ")
+    print("  o   o                                                               o   o    ")
+    print("   o o                                                                 o o     ")
+    print("  o o                                                                   o o    ")
+    print(" o   o                                                                 o   o   ")
+    print("  o o                                                                   o o    ")
+    print("  o o                                                                    o o   ")
+    print(" o   o          Enter the number of bees you want to create             o   o  ")
+    print("  o o         to your total population ( the maximum is 1851 )           o o   ")
+    print("   o o                                                                    o o  ")
+    print("  o   o                                                                  o   o ")
+    print("   o o                                                                    o o  ")
+    print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o                                                                    o o   ")
+    
+    userInput = input("                                    ")
+    
+    return userInput
+    
+
 
 
 def getUserDefensePopulation():
@@ -139,6 +166,10 @@ def getUserDefensePopulation():
     return userInput
     
 
+    
+    
+    
+    
 
 
 
