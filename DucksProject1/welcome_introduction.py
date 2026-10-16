@@ -271,8 +271,27 @@ def display_instructions_userInput_ModeSelectorDispset1_functionality_validation
     return game_mode
 
 
+def display_instructions_userInput_ModeSelector_functionality_validation(userInput):
+    
+    while userInput != "":
+        
+        userInput = input("  o o             P R E S S    E N T E R   T O   S T A R T               o o   ")
+    
+    
+    
 
 
+
+def display_instructions_userInput_ModeSelector_functionality():
+    gameMode = display_instructions_userInput_ModeSelectorDispset1()
+    
+    if gameMode == "R":
+        enter = display_instructions_userInput_ModeSelectorDispset2()
+        display_instructions_userInput_ModeSelector_functionality_validation(enter)
+    
+    else:
+        enter = display_instructions_userInput_ModeSelectorDispset3()
+        display_instructions_userInput_ModeSelector_functionality_validation(enter)
 
 
 
