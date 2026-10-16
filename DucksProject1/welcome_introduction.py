@@ -185,7 +185,22 @@ def display_instructions_userInput_DaysPopulationDispSet2(days):
 
 
 
+def display_instructions_userInput_ModeSelectorDispset1():
 
+    print("  o o                                                                    o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o                                                                    o o   ")
+    print("   o o                                                                    o o  ")
+    print("  o   o                Which mode would you like to try?                 o   o ")
+    print("   o o       Simulation  mode                       Realtime  mode        o o  ")
+    print("  o o                                                                    o o   ")
+    print(" o   o                                                                  o   o  ")
+    print("  o o              E N T E R     M O D E      B E L O W                  o o   ")
+    mode = input("                                    ")
+    
+    return mode
+    
+    
 
 
 
@@ -268,10 +283,13 @@ def display_userInput_functionality():
     days = userInput.getUserDays()
     display_instructions_welcome_HomeSpace()
     population = userInput.getUserBeehiveStarterPopulation(days)
+    display_instructions_welcome_HomeSpace()
+    mode = display_instructions_userInput_ModeSelectorDispset1()
+    return days, population, mode
     
-    return days, population
     
     
+
     
     
     
