@@ -3,7 +3,6 @@ Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
 Program name: simulation_mode#starter.py
 Description:  
 '''
-from DucksProject1 import main
 from DucksProject1 import userInput
 from DucksProject1 import userTaskExecution
 
