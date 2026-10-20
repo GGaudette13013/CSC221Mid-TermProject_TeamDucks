@@ -11,9 +11,13 @@ PER_BEE_NECTAR = 0.00072
 PER_BEE_CONSUMED = 0.00072
 PER_BEE_HONEY = 0.00012
 
-#Starting Variables (Change to formula based off starting pop later)
-totalHoney = 0.0
-totalNectar = 0.0
+'''
+Starting values:
+
+Open to change later but this is more of a place holder for now; I have plans to change this later on.
+'''
+totalHoney = starterPopulation * 0.0008
+totalNectar = starterPopulation * 0.0016
 
 
 
@@ -29,12 +33,7 @@ def totalHoney_accumulator(honeyAdd, starterPopulation):
 def calcHoney_production(foraging_bees, flowerMultiplier=1.0):
     global totalNectar
 
-    nectarCollected = (
-        PER_BEE_NECTAR
-        * foraging_bees
-        * flowerMultiplier
-    )
-
+    nectarCollected = flowerMultiplier * foraging_bees * PER_BEE_NECTAR 
     totalNectar += nectarCollected
 
     return nectarCollected
@@ -43,8 +42,6 @@ def calcHoney_production(foraging_bees, flowerMultiplier=1.0):
 
 def apply_event(currentEvent):
     global totalNectar
-
-    flowerMultiplier = 1.0
 
     if currentEvent == "drought":
         flowerMultiplier = 0.5
@@ -77,7 +74,12 @@ def end_day(foraging_bees, flowerMultiplier=1.0):
     dailyConsumption = PER_BEE_CONSUMED * foraging_bees
     netHoney = PER_BEE_HONEY * foraging_bees * flowerMultiplier
 
-    totalNectar = max(0.0, totalNectar - dailyConsumption)
+    totalNectar = totalNectar - dailyConsumption
+    
+    # Ensures no negative numbers
+    if totalNectar < 0.0:
+        totalNectar = 0.0
+    
     totalHoney += netHoney
 
     return netHoney
@@ -91,10 +93,7 @@ def run_daily_events(foraging_bees):
     print("Today's event: " + currentEvent)
 
     flowerMultiplier = apply_event(currentEvent)
-
-    nectarCollected = calcHoney_production(
-        foraging_bees, flowerMultiplier
-    )
+    nectarCollected = calcHoney_production(foraging_bees, flowerMultiplier)
 
     print("Nectar collected: " + format(nectarCollected, '.5f') + " kg")
 
