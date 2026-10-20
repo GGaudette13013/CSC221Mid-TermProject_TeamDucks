@@ -11,7 +11,7 @@ PER_BEE_NECTAR = 0.00072
 PER_BEE_CONSUMED = 0.00072
 PER_BEE_HONEY = 0.00012
 
-#Starting Variables
+#Starting Variables (Change to formula based off starting pop later)
 totalHoney = 0.0
 totalNectar = 0.0
 
