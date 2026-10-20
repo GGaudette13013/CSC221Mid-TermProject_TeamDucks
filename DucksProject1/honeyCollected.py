@@ -62,23 +62,12 @@ def calcHoney_production(foraging_bees, flowerMultiplier, event, totalHivePop):
     
     return totalNectar, honeyTotal, nectarConsumed
 
-    flowerMultiplier = apply_event(currentEvent)
-    nectarCollected = calcHoney_production(foraging_bees, flowerMultiplier)
-
-    print("Nectar collected: " + format(nectarCollected, '.5f') + " kg")
-
-    netHoney = end_day(foraging_bees, flowerMultiplier)
-
-    print("Net honey produced: " + format(netHoney, '.5f') + " kg")
-
-    display_honey()
 
 
 
-def display_honey():
-    print("\\n===== HONEY REPORT =====")
-    print("Stored nectar: " + format(totalNectar, '.5f') + " kg")
-    print("Total honey produced: " + format(totalHoney, '.5f') + " kg")
-    print("========================")
+
+
+
+
 
 
