@@ -76,6 +76,23 @@ def calcStarterHoney(startingPop):
     
 
 
+def end_day(day_honeyTotal, day_nectarTotal, day_nectarEaten, day_task):
+    
+    if day_task == "forage":
+        dailyConsumption = day_nectarTotal - day_nectarEaten
+    
+    else:
+        day_honeyTotal = day_honeyTotal - day_nectarEaten
+        netHoney = day_honeyTotal - day_nectarEaten
+        
+    
+    # Ensures no negative numbers
+    if dailyConsumption < 0.0:
+        dailyConsumption = 0.0
+    
+     
+    
+    return dailyConsumption, netHoney
 
 
 
