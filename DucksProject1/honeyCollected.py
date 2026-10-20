@@ -4,13 +4,14 @@ Program name: honeyCollected.py
 Description: Calculates nectar collection and honey production with environmental events.
 '''
 
-import envEvent
+
 
 # Constants
 PER_BEE_NECTAR = 0.00072
-PER_BEE_CONSUMED = 0.00072
+PER_BEE_CONSUMED = 0.00060
 PER_BEE_HONEY = 0.00012
-
+START_HONEY = 0.00080
+flowerMultipier = 1.0
 '''
 Starting values:
 
@@ -20,6 +21,7 @@ totalHoney = starterPopulation * 0.0008
 totalNectar = starterPopulation * 0.0016
 
 
+totalHoney = 0
 
 def totalHoney_accumulator(honeyAdd, starterPopulation):
     global totalHoney
