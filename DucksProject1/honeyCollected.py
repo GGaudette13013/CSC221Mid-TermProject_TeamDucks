@@ -21,11 +21,15 @@ Open to change later but this is more of a place holder for now; I have plans to
 
 totalHoney = 0
 
-def totalHoney_accumulator(honeyAdd, starterPopulation):
-    global totalHoney
 
-    totalHoney += honeyAdd * starterPopulation
-
+def totalHoney_accumulator(honeyAdd, day, starter_honey):
+    if day == 1:
+        totalHoney = starter_honey
+    
+    else:
+        totalHoney = totalHoney + honeyAdd
+    
+    
     return totalHoney
 
 
