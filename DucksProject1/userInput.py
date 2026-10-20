@@ -11,7 +11,6 @@ def getUserDays():
 
     userDays = int(input("Enter number of days (7-28):               "))
     while userDays < 7 or userDays > 28:
-        print("The number of days must be between 7 and 28.")
         print("  o o                                                                    o o   ")
         print(" o   o          The number of days must be between 7 and 28.            o   o  ")
         print("  o o              E N T E R     D A Y S      B E L O W                  o o   ")
@@ -29,8 +28,6 @@ def getUserBeehiveStarterPopulation(days):
     userPopulation = int(input("Enter starting bee population (1000-100000):               "))
 
     while userPopulation < 1000 or userPopulation > 100000:
-        print("Population must be between 1000 and 100000.")
-        userPopulation = int(input("Enter starting bee population (1000-100000): "))
         print("  o o     The population is not in the range of permitted population.    o o   ")
         print(" o   o   Choose population ( average is between 20,000 and 80,000 )     o   o  ")
         print("  o o        E N T E R     P O P U L A T I O N      B E L O W            o o   ")
@@ -42,4 +39,3 @@ def getUserBeehiveStarterPopulation(days):
 
 
 
-    return userPopulation
