@@ -17,8 +17,6 @@ Starting values:
 
 Open to change later but this is more of a place holder for now; I have plans to change this later on.
 '''
-totalHoney = starterPopulation * 0.0008
-totalNectar = starterPopulation * 0.0016
 
 
 totalHoney = 0
