@@ -172,6 +172,7 @@ def realtimeMode_menu_operations():
 
 
 
+
 #def display_realtimeMode_functionality(honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount):
 #    realtimeMode_menu(honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount):
     
@@ -179,11 +180,136 @@ def realtimeMode_menu_operations():
     
     
     
+
+def realtimeMode_menu_FeedBeesDispset1a(totalHoney, totalNectar, totalPopulation):
+    print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
+    print(" o          T O         C O N C L U D E         D A Y          F E E D        B E E H I V E         H O N E Y           o ")
+    print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
+    print("  o                                                                                                                    o  ")
+    print(" o                                                                                                                      o ")
+    print("  o                     All  bees  return  home  from  foraging  and  are  very  hungry.                               o  ")
+    print(" o                      It  is  time  to  feed  the  hive  with  the  honey  you  have.                                 o ")
+    print("  o                              Total Honey: ", totalHoney,"                                                                       o  ")
+    print(" o                     Honey Collected Today: ", totalNectar, "                                                                        o ")
+    print("  o                 Total Beehive Population: ", totalPopulation, "                                                                         o  ")
+    print(" o                                                                                                                      o ")
+    print("  o                             P R E S S     E N T E R   T O   C O N T I N U E                                        o  ")
+    print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
+    input("                                      ")
+    
+    
+    
+def realtimeMode_menu_FeedBeesDispSet1b():
+    print("  o o  ")
+    print(" o   o ")
+    print("  o o   o o  o o  o o  o o  o o  o o  o o  o o  o o")
+    print(" o   o  Press Enter to     F E E D    H I V E      o")
+    
+    
+    
+    userTask = input("  o o          ")
+
+
+
+
+
+
+
+def realtimeMode_menu_FeedBeesDispset2a(totalHoney, totalNectar, totalPopulation):
+    print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
+    print(" o          T O         C O N C L U D E         D A Y          F E E D        B E E H I V E         H O N E Y           o ")
+    print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
+    print("  o                                                                                                                    o  ")
+    print(" o                                                                                                                      o ")
+    print("  o                    The bees have been busy increasing the population within the hive                               o  ")
+    print(" o                      It  is  time  to  feed  the  hive  with  the  honey  you  have.                                 o ")
+    print("  o                              Total Honey: ", totalHoney,"                                                                       o  ")
+    print(" o                     Honey Collected Today: ", totalNectar, "                                                                        o ")
+    print("  o                 Total Beehive Population: ", totalPopulation, "                                                                         o  ")
+    print(" o                                                                                                                      o ")
+    print("  o                                                                                                                    o  ")
+    print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
+    input("                                      ")
+    
+    
+    
+def realtimeMode_menu_FeedBeesDispSet2b():
+    print("  o o  ")
+    print(" o   o ")
+    print("  o o   o o  o o  o o  o o  o o  o o  o o  o o  o o")
+    print(" o   o  Press Enter to     F E E D    H I V E      o")
+    
+    
+    userTask = input("  o o          ")
+
+
+
+
+
+
+
+
+
+def realtimeMode_menu_FeedBeesDispset3a(totalHoney, totalNectar, totalPopulation):
+    print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
+    print(" o          T O         C O N C L U D E         D A Y          F E E D        B E E H I V E         H O N E Y           o ")
+    print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
+    print("  o                                                                                                                    o  ")
+    print(" o                                                                                                                      o ")
+    print("  o                    The bees are ready to sleep after a long day of guarding the nest                               o  ")
+    print(" o                      It  is  time  to  feed  the  hive  with  the  honey  you  have.                                 o ")
+    print("  o                              Total Honey: ", totalHoney,"                                                                       o  ")
+    print(" o                     Honey Collected Today: ", totalNectar, "                                                                        o ")
+    print("  o                 Total Beehive Population: ", totalPopulation, "                                                                         o  ")
+    print(" o                                                                                                                      o ")
+    print("  o                                                                                                                    o  ")
+    print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
+    input("                                      ")
+    
+    
+    
+def realtimeMode_menu_FeedBeesDispSet3b():
+    print("  o o  ")
+    print(" o   o ")
+    print("  o o   o o  o o  o o  o o  o o  o o  o o  o o  o o")
+    print(" o   o  Press Enter to     F E E D    H I V E      o")
+    
+    
+    userTask = input("  o o          ")
+
+
+def realtimeMode_menu_FeedBees_functionality_validation(enter):
+    while enter != "":
+        print(" o   o  Press Enter to     F E E D    H I V E      o")
+        enter = input("  o o          ")
+    
     
     
     
 
-
+def realtimeMode_menu_FeedBees_functionality(daysTask, totalHoney, totalNectar, totalPopulation):
+    
+    if daysTask == "F":
+        
+        userInput = realtimeMode_menu_FeedBeesDispset1a(totalHoney, totalNectar, totalPopulation)
+        realtimeMode_menu_FeedBees_functionality_validation(userInput)
+        feed = realtimeMode_menu_FeedBeesDispSet1b()
+    
+    elif daysTask == "C":
+        userInput = realtimeMode_menu_FeedBeesDispset2a(totalHoney, totalNectar, totalPopulation)
+        realtimeMode_menu_FeedBees_functionality_validation(userInput)
+        feed = realtimeMode_menu_FeedBeesDispSet2b()
+        
+    else:
+        userInput = realtimeMode_menu_FeedBeesDispset3a(totalHoney, totalNectar, totalPopulation)
+        realtimeMode_menu_FeedBees_functionality_validation(userInput)
+        feed = realtimeMode_menu_FeedBeesDispSet3b()
+        
+        
+    
+    
+    
+    
 
 
 
