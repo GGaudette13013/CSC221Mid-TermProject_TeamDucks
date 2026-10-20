@@ -65,6 +65,15 @@ def calcHoney_production(foraging_bees, flowerMultiplier, event, totalHivePop):
 
 
 
+def calcStarterHoney(startingPop):
+    
+    starter_honey = startingPop * START_HONEY
+    
+    return starter_honey
+    
+    
+    
+    
 
 
 
