@@ -6,6 +6,7 @@ Description:
 from DucksProject1 import welcome_introduction
 from DucksProject1 import userInput
 from DucksProject1 import hivePopulations
+from DucksProject1 import realtimeMode
 
 
 def getUserTask():
@@ -69,8 +70,10 @@ def userTaskIdentification(task):
             print(" o   o                                                                  o   o  ")
             print("  o o                                                                    o o   ")
             population_create = input("                                    ")
-            
-        hivePopulations.createBeesPopulationAddition(population_create)
+        
+        
+        runningTotal = hivePopulations.totalPopulation_accumulator()
+        hivePopulations.createBeesPopulationAddition(population_create, runningTotal)
             
             
     
