@@ -97,3 +97,22 @@ def end_day(day_honeyTotal, day_nectarTotal, day_nectarEaten, day_task):
 
 
 
+# This function is to be called from main to organize the info. 
+def calcHoneyForageFunctionality(startingPopulaton, foraging_bee_pop, currentEvent, totalHivePopulaton, taskForDay, days):
+    starter_honey = calcStarterHoney(startingPopulaton)
+    
+    global flowerMultipier
+    nectarProduced, honey, nectarConsumed = calcHoney_production(foraging_bee_pop, flowerMultipier, currentEvent, totalHivePopulaton)
+    
+    dailyConsumption, netHoney = end_day(honey, nectarProduced, nectarConsumed, taskForDay)
+    
+    totalHoney_accumulator(netHoney, days, starter_honey)
+    
+    return dailyConsumption
+    
+    
+    
+    
+    
+    
+    
