@@ -34,67 +34,33 @@ def totalHoney_accumulator(honeyAdd, day, starter_honey):
 
 
 
-def calcHoney_production(foraging_bees, flowerMultiplier=1.0):
-    global totalNectar
-
-    nectarCollected = flowerMultiplier * foraging_bees * PER_BEE_NECTAR 
-    totalNectar += nectarCollected
-
-    return nectarCollected
 
 
-
-def apply_event(currentEvent):
-    global totalNectar
-
-    if currentEvent == "drought":
+def calcHoney_production(foraging_bees, flowerMultiplier, event, totalHivePop):
+    
+    totalNectar = 0
+    
+    if event == "drought":
         flowerMultiplier = 0.5
 
-    elif currentEvent == "rainy":
+    elif event == "rainy":
         flowerMultiplier = 1.5
 
-    elif currentEvent == "black bear":
-        flowerMultiplier = 0.8
-
-    elif currentEvent == "hornets":
-        flowerMultiplier = 0.8
-
-    elif currentEvent == "small hive beetle":
-        flowerMultiplier = 0.9
-
-    elif currentEvent == "pesticides":
-        flowerMultiplier = 0.5
-        
     else:
         flowerMultiplier = 1.0
     
-    return flowerMultiplier
-
-
-
-def end_day(foraging_bees, flowerMultiplier=1.0):
-    global totalNectar, totalHoney
-
-    dailyConsumption = PER_BEE_CONSUMED * foraging_bees
-    netHoney = PER_BEE_HONEY * foraging_bees * flowerMultiplier
-
-    totalNectar = totalNectar - dailyConsumption
     
-    # Ensures no negative numbers
-    if totalNectar < 0.0:
-        totalNectar = 0.0
     
-    totalHoney += netHoney
-
-    return netHoney
-
-
-
-def run_daily_events(foraging_bees):
-    eventNumber = envEvent.event_randomizer()
-    currentEvent = envEvent.event_identifier(eventNumber)
-
-    print("Today's event: " + currentEvent)
+    nectarCollected = flowerMultiplier * foraging_bees * PER_BEE_NECTAR 
+    
+    honeyTotal = flowerMultiplier * foraging_bees * PER_BEE_HONEY
+    
+    nectarConsumed = totalHivePop * PER_BEE_CONSUMED
+    
+    totalNectar = totalNectar + nectarCollected
+    
+    
+    return totalNectar, honeyTotal, nectarConsumed
 
     flowerMultiplier = apply_event(currentEvent)
     nectarCollected = calcHoney_production(foraging_bees, flowerMultiplier)
