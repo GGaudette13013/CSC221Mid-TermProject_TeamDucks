@@ -14,9 +14,9 @@ def totalPopulation_accumulator(population):
     
     
     
-    totalPopulation = totalPopulation + population
+    population = population
     
-    return totalPopulation
+    return population
 
 
 
@@ -47,7 +47,7 @@ def foragingPopulation_accumulators(beesSentToForage):
 
  
 def defensePopulation_accumulators(beesSentToDefense):
-    
+    totalDefensePopulation = 0
     totalDefensePopulation = totalDefensePopulation + beesSentToDefense
     
     

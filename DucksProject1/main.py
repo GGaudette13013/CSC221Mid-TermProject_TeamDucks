@@ -18,7 +18,7 @@ def main():
     defense_bees = 0
     # Title and program instructions
     welcome_introduction.display_welcome_functionality()
-    dayCount, starterPopulation, gameMode = welcome_introduction.display_userInput_functionality()
+    dayCount, starterPopulation = welcome_introduction.display_userInput_functionality()
     
     # game mode selector
     
@@ -40,6 +40,11 @@ def main():
     # Getting user task
     task = userTaskExecution.getUserTask()
     userTaskExecution.getUserTaskValidation(task)
+    taskID = userTaskExecution.userTaskIdentification(task)
+    
+    
+    # Feed bees
+    
     
     
 main()

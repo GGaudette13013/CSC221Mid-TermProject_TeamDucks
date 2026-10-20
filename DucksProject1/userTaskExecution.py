@@ -15,7 +15,7 @@ def getUserTask():
     print(" o   o ")
     print("  o o   o o  o o  o o  o o  o o  o o  o o")
     print(" o   o     E N T E R         T A S K     o")
-    userTask = input(" o o                                ")
+    userTask = input("  o o          ")
     
     return userTask
     
@@ -39,11 +39,11 @@ def getUserTaskValidation(taskChoice):
 
 
 
-def userTaskIdentification(task):
+def userTaskIdentification(tasks):
     
     
     
-    if task == "F":
+    if tasks == "F":
         MINFORAGE = 201
         MAXFORAGE = 40001
         population_forage = getUserForagePopulation()
@@ -52,7 +52,7 @@ def userTaskIdentification(task):
             print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
             print(" o   o                                                                  o   o  ")
             print("  o o                                                                    o o   ")
-            population_forage = input("                                    ")        
+            population_forage = int(input("                                    "))
         
         hivePopulations.foragingPopulation_accumulators(population_forage)
         
@@ -60,7 +60,7 @@ def userTaskIdentification(task):
         
         
         
-    elif task == "C":
+    elif tasks == "C":
         MINCREATE = 101
         MAXCREATE = 1851
         population_create = getUserCreateBeesPopulation()
@@ -69,7 +69,7 @@ def userTaskIdentification(task):
             print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
             print(" o   o                                                                  o   o  ")
             print("  o o                                                                    o o   ")
-            population_create = input("                                    ")
+            population_create = int(input("                                    "))
         
         
         runningTotal = hivePopulations.totalPopulation_accumulator()
@@ -86,7 +86,7 @@ def userTaskIdentification(task):
             print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
             print(" o   o                                                                  o   o  ")
             print("  o o                                                                    o o   ")
-            population_defense = input("                                    ")
+            population_defense = int(input("                                    "))
         hivePopulations.defensePopulation_accumulators(population_defense)
 
 
@@ -111,7 +111,7 @@ def getUserForagePopulation():
     print(" o   o                                                                  o   o  ")
     print("  o o                                                                    o o   ")
     
-    userInput = input("                                    ")
+    userInput = int(input("                                    "))
     
     return userInput
     
@@ -137,7 +137,7 @@ def getUserCreateBeesPopulation():
     print(" o   o                                                                  o   o  ")
     print("  o o                                                                    o o   ")
     
-    userInput = input("                                    ")
+    userInput = int(input("                                    "))
     
     return userInput
     
@@ -164,7 +164,7 @@ def getUserDefensePopulation():
     print(" o   o                                                                  o   o  ")
     print("  o o                                                                    o o   ")
     
-    userInput = input("                                    ")
+    userInput = int(input("                                    "))
     
     return userInput
     
