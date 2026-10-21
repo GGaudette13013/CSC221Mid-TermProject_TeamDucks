@@ -72,7 +72,7 @@ def userTaskIdentification(tasks):
             population_create = int(input("                                    "))
         
         
-        runningTotal = hivePopulations.totalPopulation_accumulator()
+        runningTotal = hivePopulations.totalPopulation
         hivePopulations.createBeesPopulationAddition(population_create, runningTotal)
             
             

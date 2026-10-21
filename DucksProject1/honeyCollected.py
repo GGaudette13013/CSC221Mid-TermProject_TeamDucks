@@ -29,6 +29,7 @@ def totalHoney_calc(day, nethoney, starterHoney):
         return totalHoney
         
     else:
+        totalHoney = starterHoney
         totalHoney = totalHoney + nethoney
         
         return totalHoney
