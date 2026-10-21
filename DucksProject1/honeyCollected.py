@@ -135,6 +135,23 @@ def dailyHoney_calc(event, starterPopulation, beesForaging, task, day, populatio
     
     
 
+event = "drought"
+starterPopulation = 40000 
+beesForaging =  31000
+task = "F"
+day = 1
+population = 40000
+    
+dailyHoney_calc(event, starterPopulation, beesForaging, task, day, population)
+
+
+
+
+
+
+
+
+
 def totalHoney_accumulator(honeyAdd, day, starter_honey):
     if day == 1:
         totalHoney = starter_honey
@@ -223,8 +240,7 @@ def calcHoneyForageFunctionality(startingPopulaton, foraging_bee_pop, currentEve
     
     return dailyConsumption
     
-    
-    
+ '''   
     
     
     
