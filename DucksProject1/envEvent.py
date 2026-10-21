@@ -5,6 +5,11 @@ Description:
 '''
 from random import randint
 
+
+
+
+
+
 def event_randomizer():
     
     event = randint(1,34)
