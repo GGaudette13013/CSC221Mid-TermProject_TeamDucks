@@ -14,7 +14,7 @@ def totalPopulation_accumulator(population):
     
     
     
-    population = totalPopulation
+    totalPopulation = population
     
     return totalPopulation
 

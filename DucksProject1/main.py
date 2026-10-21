@@ -71,7 +71,7 @@ def main():
             honeyEaten, totalHoney = honeyCollected.dailyHoney_calc(eventID, startingPopulation, foraging_bees, task, dayCount, totalPopulation)
             starterHoney = honeyCollected.starterHoney_calc(startingPopulation)
             # this is probably going to double our honey... just temporary
-            hiveHoneyTotal = honeyCollected.totalHoney_calc(dayCount, totalHoney, starterHoney)
+            hiveHoneyTotal = honeyCollected.totalHoney_calc(dayCount, totalHoney, starterHoney) # duplicated from above
             
             
             
