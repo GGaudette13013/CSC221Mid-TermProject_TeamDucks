@@ -49,7 +49,7 @@ def event_identifier(currentEvent):
         condition = "small hive beetle"
     
     elif currentEvent == 6:
-        condition = "pesicides"
+        condition = "pesticides"
     
     
     
@@ -62,6 +62,94 @@ def event_identifier(currentEvent):
 
 
 
+def eventCondition_drought():
+    # direct affect - flowerMultipier()
+    weather = "drought"
+    
+    return weather
+    
+    
+
+def eventCondition_rainy(forage_pop):
+    RAINY_FORAGING_RATE = .30
+    
+    weather = "rainy"
+    
+    forage_pop = forage_pop * RAINY_FORAGING_RATE
+    
+    return weather, forage_pop
+    
+
+def eventCondition_blackBear(population, totalHoney):
+    BEAR_ATTACK_CONSTANT = .50
+    
+    population = population * BEAR_ATTACK_CONSTANT
+    totalHoney = totalHoney * BEAR_ATTACK_CONSTANT
+    
+    return population, totalHoney
+    
+    
+    
+    
+
+def eventCondition_hornets(defense, population, totalHoney):
+    
+    HORNET_ATTACK_CONSTANT = .80
+    HORNETS_HONEY = .20
+    
+    if defense >= 500:
+        defense = defense
+        population = population
+        totalHoney = totalHoney
+    else:
+        defense = defense * HORNET_ATTACK_CONSTANT
+        popultion = population * HORNET_ATTACK_CONSTANT
+        totalHoney = totalHoney * HORNETS_HONEY
+    
+    return defense, population, totalHoney
+    
+    
+
+def eventCondition_smallHiveBeetle(defense, totalHoney):
+    
+    SMALLHIVEBEETLE_ATTACK_CONSTANT = 10
+    
+    if totalHoney <= 39:
+        defense = defense
+        totalHoney = totalHoney 
+    
+    else:
+        defense = defense - 10
+        if defense < 0:
+            defense = 0
+        else:
+            defense = defense
+        
+        
+        totalHoney = totalHoney - SMALLHIVEBEETLE_ATTACK_CONSTANT
+    
+    
+    return defense, totalHoney
+    
+    
+
+def eventCondition_pesticides(population):
+    
+    PESTICIDE_DAMAGE = .50
+    
+    population = population * PESTICIDE_DAMAGE
+    
+    return population
+    
+    
+    
+
+def eventCondition_normal():
+    weather = "normal"
+    
+    return weather
+    
+    
 
 #def event_handler(eventIdentity):
     
