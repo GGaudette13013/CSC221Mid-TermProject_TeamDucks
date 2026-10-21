@@ -153,8 +153,43 @@ def eventCondition_normal():
 
 #def event_handler(eventIdentity):
     
+ 
+ 
+ 
     
 #    if eventIdentity == "drought":
+
+def event_handler(eventIdentity, forage_pop, population, defense, totalHoney):
+    if eventIdentity == "drought":
+        eventCondition_drought()
+    
+    elif eventIdentity == "rainy":
+        eventCondition_rainy(forage_pop)
+        
+        
+    elif eventIdentity == "black bear":
+        eventCondition_blackBear(population, totalHoney)
+        
+        
+    elif eventIdentity == "hornets":
+        eventCondition_hornets(defense, population, totalHoney)
+        
+        
+    elif eventIdentity == "small hive beetle":
+        eventCondition_smallHiveBeetle(defense, totalHoney)
+        
+        
+    elif eventIdentity == "pesticides":
+        eventCondition_pesticides(population)
+        
+    
+    else:
+        eventCondition_normal()
+    
+    
+    
+    return forage_pop, population, defense, totalHoney
+
         
     
     
