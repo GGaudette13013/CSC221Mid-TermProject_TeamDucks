@@ -151,13 +151,11 @@ def eventCondition_normal():
     
     
 
-#def event_handler(eventIdentity):
     
  
  
  
     
-#    if eventIdentity == "drought":
 
 def event_handler(eventIdentity, forage_pop, population, defense, totalHoney):
     if eventIdentity == "drought":
