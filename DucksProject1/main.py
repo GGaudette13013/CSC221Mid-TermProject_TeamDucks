@@ -57,8 +57,11 @@ def main():
             # realtime mode starts here 
             # Get simulation days and starting bee population
         days = userInput.getUserDays()
+        
         startingPopulation = userInput.getUserBeehiveStarterPopulation(days)
         # realtime mode:
+        
+        
         # Loop through each simulation day
         for day in range(1, days + 1, 1):
             print("Day", day)
@@ -74,6 +77,41 @@ def main():
     # have not yet worked on this... 
  
     
+                    
+            # This is realtime mode :
+            
+            # generate event
+            
+            
+            
+            
+            # accumulates all the running totals including honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount
+            startingHoney = honeyCollected.starterHoney_calc(startingPopulation)
+            honeyTotal = honeyCollected.totalHoney_calc(day, honeyAdd, startingHoney)
+            flower_multipier = honeyCollected.flowerMultipier_calc(event)
+            nectarProduction = honeyCollected.nectarCollected_calc(foraging_bees, flower_multipier)
+            totalBeehivePopulation = hivePopulations.totalPopulation_accumulator(starterPopulation)
+            totalBeesForageing = hivePopulations.foragingPopulation_accumulators(foraging_bees)
+            TotalBeeDefenceCount = hivePopulations.defensePopulation_accumulators(defense_bees)
+            
+            
+            # Displays updated info on info station - realtimeMode stuff
+            realtimeMode.realtimeMode_menu(honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount)
+            realtimeMode.realtimeMode_menu_eventDisplay_Normal()
+            realtimeMode.realtimeMode_menu_operations()
+            # Getting user task
+            task = userTaskExecution.getUserTask()
+            userTaskExecution.getUserTaskValidation(task)
+            taskID = userTaskExecution.userTaskIdentification(task)
+            # how to affect the honey production. 
+            
+            # Feed bees
+            realtimeMode.realtimeMode_menu_FeedBees_functionality(task, honeyTotal, nectarProduction, totalBeehivePopulation)
+            
+        
+        
+        
+        
     
         
         
@@ -91,6 +129,7 @@ def main():
         
     
     
+       
     
     
     
