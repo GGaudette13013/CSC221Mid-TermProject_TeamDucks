@@ -11,18 +11,20 @@ PER_BEE_NECTAR = 0.00072
 PER_BEE_CONSUMED = 0.00060
 PER_BEE_HONEY = 0.00012
 START_HONEY = 0.00080
-flowerMultipier = 1.0
+
+flowerMultiplier = 1.0
+
 '''
 Starting values:
 
 Open to change later but this is more of a place holder for now; I have plans to change this later on.
 '''
 
-
 totalHoney = 0
 
 
-def totalHoney_accumulator(honeyAdd, day, starter_honey):
+def totalHoney_accumulator(totalHoney, honeyAdd, day, starter_honey):
+    
     if day == 1:
         totalHoney = starter_honey
     
@@ -49,8 +51,6 @@ def calcHoney_production(foraging_bees, flowerMultiplier, event, totalHivePop):
     else:
         flowerMultiplier = 1.0
     
-    
-    
     nectarCollected = flowerMultiplier * foraging_bees * PER_BEE_NECTAR 
     
     honeyTotal = flowerMultiplier * foraging_bees * PER_BEE_HONEY
@@ -61,6 +61,7 @@ def calcHoney_production(foraging_bees, flowerMultiplier, event, totalHivePop):
     
     
     return totalNectar, honeyTotal, nectarConsumed
+
 
 
 
@@ -89,9 +90,7 @@ def end_day(day_honeyTotal, day_nectarTotal, day_nectarEaten, day_task):
     # Ensures no negative numbers
     if dailyConsumption < 0.0:
         dailyConsumption = 0.0
-    
-     
-    
+        
     return dailyConsumption, netHoney
 
 
@@ -106,7 +105,7 @@ def calcHoneyForageFunctionality(startingPopulaton, foraging_bee_pop, currentEve
     
     dailyConsumption, netHoney = end_day(honey, nectarProduced, nectarConsumed, taskForDay)
     
-    totalHoney_accumulator(netHoney, days, starter_honey)
+    totalHoney_accumulator(totalHoney, netHoney, days, starter_honey)
     
     return dailyConsumption
     
