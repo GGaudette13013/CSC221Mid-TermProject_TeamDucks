@@ -28,28 +28,6 @@ def main():
     
     # for loop for days starts here after days and starer population has been given
     
-    # This is realtime mode :
-    # accumulates all the running totals including honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount
-    honeyTotal = honeyCollected.totalHoney_accumulator(honeyAdd, starterPopulation)
-    nectarProduction = honeyCollected.calcHoney_production(foraging_bees)
-    totalBeehivePopulation = hivePopulations.totalPopulation_accumulator(starterPopulation)
-    totalBeesForageing = hivePopulations.foragingPopulation_accumulators(foraging_bees)
-    TotalBeeDefenceCount = hivePopulations.defensePopulation_accumulators(defense_bees)
-    
-    
-    # Displays updated info on info station - realtimeMode stuff
-    realtimeMode.realtimeMode_menu(honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount)
-    realtimeMode.realtimeMode_menu_eventDisplay_Normal()
-    realtimeMode.realtimeMode_menu_operations()
-    # Getting user task
-    task = userTaskExecution.getUserTask()
-    userTaskExecution.getUserTaskValidation(task)
-    taskID = userTaskExecution.userTaskIdentification(task)
-    # how to affect the honey production. 
-    
-    # Feed bees
-    realtimeMode.realtimeMode_menu_FeedBees_functionality(task, honeyTotal, nectarProduction, totalBeehivePopulation)
-    
     if game_mode == "R":
         
         
@@ -64,19 +42,6 @@ def main():
         
         # Loop through each simulation day
         for day in range(1, days + 1, 1):
-            print("Day", day)
-        # Getting user task
-            task = getUserTask()
-            task = getUserTaskValidation(task)
-    # accumulates all the running totals including honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount
-    
-    
-    # Displays updated info on info station
-    
-    # simulation mode:
-    # have not yet worked on this... 
- 
-    
                     
             # This is realtime mode :
             
@@ -124,11 +89,6 @@ def main():
         
         
         # Getting user task
-        task = getUserTask()
-        getUserTaskValidation(task)
-        
-    
-    
        
     
     
