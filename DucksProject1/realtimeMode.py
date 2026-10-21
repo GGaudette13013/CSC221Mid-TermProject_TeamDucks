@@ -3,7 +3,6 @@ Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
 Program name: simulation_mode#starter.py
 Description:  
 '''
-
 from DucksProject1 import userInput
 from DucksProject1 import userTaskExecution
 
@@ -125,8 +124,8 @@ def realtimeMode_menu_eventDisplay_Normal():
     print("          ooooo     ..          ...    8    .          ")
     print("         oo..:oo    :.:.       .   .  888    ..        ")
     print("        oo.::.:oo   .:: . .:.   .      |       .       ")
-    print("        oo:.:.:::.:.  .  . 0 . o    o  |   o  O        ")
-    print("        ooooooooo          |   |    |  |  /   |        ")
+    print("        oo:.:.:::.:.  .  .   . o    o  |   o  O        ")
+    print("        ooooooooo              |    |  |  /   |        ")
     print("        EVENT STATUS: Normal                           ")
     print("                      nothing could be better!         ")
     print("\t")
