@@ -34,8 +34,8 @@ def main():
         
         
         
-        # realtime mode starts here 
-             # Get simulation days and starting bee population
+            # realtime mode starts here 
+            # Get simulation days and starting bee population
         days = userInput.getUserDays()
         startingPopulation = userInput.getUserBeehiveStarterPopulation(days)
         # realtime mode:
