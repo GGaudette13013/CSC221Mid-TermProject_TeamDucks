@@ -36,6 +36,17 @@ def getUserBeehiveStarterPopulation(days):
 
     return userPopulation
 
+# Gets the number of bees sent foraging
+def getUserForagingBees(totalPopulation):
 
+    foragingBees = int(input("How many bees would you like to send foraging? "))
+
+    while foragingBees < 0 or foragingBees > totalPopulation:
+        print("Invalid number of bees.")
+        print("You have", totalPopulation, "bees available.")
+
+        foragingBees = int(input("Enter number of bees to forage: "))
+
+    return foragingBees
 
 
