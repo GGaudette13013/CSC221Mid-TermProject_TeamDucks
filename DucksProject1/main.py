@@ -5,7 +5,6 @@ Description:
 '''
 
 from DucksProject1 import welcome_introduction, envEvent
-from DucksProject1 import userInput
 from DucksProject1 import userTaskExecution
 from DucksProject1 import hivePopulations
 from DucksProject1 import honeyCollected
@@ -21,15 +20,10 @@ def main():
     welcome_introduction.display_welcome_functionality()
     dayCount, startingPopulation, game_mode = welcome_introduction.display_userInput_functionality()
     
-    
-    
-    
     # for loop for days starts here after days and starer population has been given
     
     if game_mode == "R":
-        
-        
-        
+    
             # realtime mode starts here 
             # Get simulation days and starting bee population
         
@@ -73,32 +67,9 @@ def main():
             # this is probably going to double our honey... just temporary
             hiveHoneyTotal = honeyCollected.totalHoney_calc(dayCount, totalHoney, starterHoney) # duplicated from above
             
-            
-            
-            
-            
             # Feed bees
             realtimeMode.realtimeMode_menu_FeedBees_functionality(task, hiveHoneyTotal, totalHoney, totalPopulation, honeyEaten)
-            
-        
-        
-        
-        
-    
-        
-        
-           
-        
-        # accumulates all the running totals including honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount
-        
-        
-        # Displays updated info on info station
-        
-        
-        # Getting user task
-       
-    
-    
+
     
     else:
         # simulation mode starts here 
