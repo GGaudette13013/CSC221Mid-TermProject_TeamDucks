@@ -23,12 +23,13 @@ Open to change later but this is more of a place holder for now; I have plans to
 
 
 
-def totalHoney_calc(day, nethoney, starterHoney):
+def totalHoney_calc(day, nethoney, starterHoney, totalHoney):
     if day == 1:
         totalHoney = starterHoney
         return totalHoney
         
     else:
+        
         totalHoney = totalHoney + nethoney
         
         return totalHoney
@@ -79,7 +80,7 @@ def nectarCollected_calc(foragingBees, flowerMultipier):
     
 def nectarConsumed_calc(daysNectar, dayTask, population, foragingBees):
     if dayTask == "F":
-            
+        netHoney = 0  
         # calc  bees consumption
         hiveConsumption = (foragingBees * PER_BEE_CONSUMED) + (population * OTHER_BEES_CONSUMPTION)
         
@@ -89,6 +90,7 @@ def nectarConsumed_calc(daysNectar, dayTask, population, foragingBees):
         
         # Gavin's anti-negative scheme
         if netHoney < 0:
+            #kills bees from pop who did not get 1kg of honey!! if negative it is real bad
             population = population + netHoney 
             netHoney = 0
         else:
@@ -97,29 +99,35 @@ def nectarConsumed_calc(daysNectar, dayTask, population, foragingBees):
         return netHoney, hiveConsumption
     
     else:
-    
-        hiveConsumption = totalHoney - (population * OTHER_BEES_CONSUMPTION)
-        netHoney = netHoney * (-1) 
+        netHoney = 0
+        hiveConsumption = (population * OTHER_BEES_CONSUMPTION)
+        netHoney = (population * OTHER_BEES_CONSUMPTION) * (-1)  # ? 
         
-        return netHoney, hiveConsumption
+        return  netHoney, hiveConsumption
         
     
     
 def dailyHoney_calc(event, starterPopulation, beesForaging, task, day, population):
+    if task == "F":
+        
+        
+        flowerMultipier = flowerMultipier_calc(event)
+        nectar = nectarCollected_calc(beesForaging, flowerMultipier)
+        
+        dayshoney, honeyEaten = nectarConsumed_calc(nectar, task, population, beesForaging)
+        
+        starterHoney = starterHoney_calc(starterPopulation)
+        hiveHoney = totalHoney_calc(day, dayshoney, starterHoney, population)
+    else:
+        beesForaging = 0
+        flowerMultipier = 0
+        nectar = nectarCollected_calc(beesForaging, flowerMultipier)
+        dayshoney, honeyEaten = nectarConsumed_calc(nectar, task, population, beesForaging)
+        starterHoney = starterHoney_calc(starterPopulation)
+        hiveHoney = totalHoney_calc(day, dayshoney, starterHoney, population)
+        
     
-    
-    
-    flowerMultipier = flowerMultipier_calc(event)
-    nectar = nectarCollected_calc(beesForaging, flowerMultipier)
-    
-    dayshoney, honeyEaten = nectarConsumed_calc(nectar, task, population, beesForaging)
-    
-    starterHoney = starterHoney_calc(starterPopulation)
-    hiveHoney = totalHoney_calc(day, dayshoney, starterHoney)
-    
-    
-    
-    return honeyEaten, totalHoney
+    return honeyEaten, hiveHoney, nectar
     
     
     

@@ -145,7 +145,7 @@ def realtimeMode_menu_eventDisplay_Normal():
 def realtimeMode_menu_operations():
         # Forage
     print("  o o  o o  o o  o o  o o  o o  ")
-    print(" o  FORAGE        Get nectar  o ")
+    print(" o  FORAGE        get honey  o ")
     print("  o           :              o  ")
     print(" o   PRESS            F       o ")
     print("  o                          o ")
@@ -180,7 +180,7 @@ def realtimeMode_menu_operations():
     
     
 
-def realtimeMode_menu_FeedBeesDispset1a(totalHoney, totalNectar, totalPopulation):
+def realtimeMode_menu_FeedBeesDispset1a(totalHoney, totalNectar, totalPopulation, beeConsumption):
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
     print(" o          T O         C O N C L U D E         D A Y          F E E D        B E E H I V E         H O N E Y           o ")
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
@@ -214,7 +214,7 @@ def realtimeMode_menu_FeedBeesDispSet1b():
 
 
 
-def realtimeMode_menu_FeedBeesDispset2a(totalHoney, totalNectar, totalPopulation):
+def realtimeMode_menu_FeedBeesDispset2a(totalHoney, totalNectar, totalPopulation, beeConsumption):
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
     print(" o          T O         C O N C L U D E         D A Y          F E E D        B E E H I V E         H O N E Y           o ")
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
@@ -249,7 +249,7 @@ def realtimeMode_menu_FeedBeesDispSet2b():
 
 
 
-def realtimeMode_menu_FeedBeesDispset3a(totalHoney, totalNectar, totalPopulation):
+def realtimeMode_menu_FeedBeesDispset3a(totalHoney, totalNectar, totalPopulation, beeConsumption):
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
     print(" o          T O         C O N C L U D E         D A Y          F E E D        B E E H I V E         H O N E Y           o ")
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
@@ -260,7 +260,7 @@ def realtimeMode_menu_FeedBeesDispset3a(totalHoney, totalNectar, totalPopulation
     print("  o                              Total Honey: ", totalHoney,"                                                                       o  ")
     print(" o                     Honey Collected Today: ", totalNectar, "                                                                        o ")
     print("  o                 Total Beehive Population: ", totalPopulation, "                                                                         o  ")
-    print(" o                                                                                                                      o ")
+    print(" o                    Total Hive Consumption: ",  beeConsumption,"                                                                  o ")
     print("  o                                                                                                                    o  ")
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
     input("                                      ")
@@ -286,21 +286,21 @@ def realtimeMode_menu_FeedBees_functionality_validation(enter):
     
     
 
-def realtimeMode_menu_FeedBees_functionality(daysTask, totalHoney, totalNectar, totalPopulation):
+def realtimeMode_menu_FeedBees_functionality(daysTask, totalNectar, totalHoney, totalPopulation, eatenHoney):
     
     if daysTask == "F":
         
-        userInput = realtimeMode_menu_FeedBeesDispset1a(totalHoney, totalNectar, totalPopulation)
+        userInput = realtimeMode_menu_FeedBeesDispset1a(totalHoney, totalNectar, totalPopulation, eatenHoney)
         realtimeMode_menu_FeedBees_functionality_validation(userInput)
         feed = realtimeMode_menu_FeedBeesDispSet1b()
     
     elif daysTask == "C":
-        userInput = realtimeMode_menu_FeedBeesDispset2a(totalHoney, totalNectar, totalPopulation)
+        userInput = realtimeMode_menu_FeedBeesDispset2a(totalHoney, totalNectar, totalPopulation, eatenHoney)
         realtimeMode_menu_FeedBees_functionality_validation(userInput)
         feed = realtimeMode_menu_FeedBeesDispSet2b()
         
     else:
-        userInput = realtimeMode_menu_FeedBeesDispset3a(totalHoney, totalNectar, totalPopulation)
+        userInput = realtimeMode_menu_FeedBeesDispset3a(totalHoney, totalNectar, totalPopulation, eatenHoney)
         realtimeMode_menu_FeedBees_functionality_validation(userInput)
         feed = realtimeMode_menu_FeedBeesDispSet3b()
         
