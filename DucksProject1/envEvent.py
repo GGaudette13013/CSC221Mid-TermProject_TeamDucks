@@ -97,38 +97,22 @@ def eventCondition_hornets(defense, population, totalHoney):
     HORNET_ATTACK_CONSTANT = .80
     HORNETS_HONEY = .20
     
-    if defense >= 500:
-        defense = defense
-        population = population
-        totalHoney = totalHoney
-    else:
-        defense = defense * HORNET_ATTACK_CONSTANT
-        popultion = population * HORNET_ATTACK_CONSTANT
-        totalHoney = totalHoney * HORNETS_HONEY
+
+    defense = defense * HORNET_ATTACK_CONSTANT
+    popultion = population * HORNET_ATTACK_CONSTANT
+    totalHoney = totalHoney * HORNETS_HONEY
     
     return defense, population, totalHoney
     
     
 
 def eventCondition_smallHiveBeetle(defense, totalHoney):
-    
     SMALLHIVEBEETLE_ATTACK_CONSTANT = 10
     
-    if totalHoney <= 39:
-        defense = defense
-        totalHoney = totalHoney 
+    defense = defense - 10
+    totalHoney = totalHoney - SMALLHIVEBEETLE_ATTACK_CONSTANT
     
-    else:
-        defense = defense - 10
-        if defense < 0:
-            defense = 0
-        else:
-            defense = defense
-        
-        
-        totalHoney = totalHoney - SMALLHIVEBEETLE_ATTACK_CONSTANT
-    
-    
+
     return defense, totalHoney
     
     
@@ -170,13 +154,28 @@ def event_handler(eventIdentity, forage_pop, population, defense, totalHoney):
         
         
     elif eventIdentity == "hornets":
-        eventCondition_hornets(defense, population, totalHoney)
+        if defense >= 500:
+            eventCondition_hornets(defense, population, totalHoney)
         
+        else:
+            
+            eventCondition_normal()
+            
         
     elif eventIdentity == "small hive beetle":
-        eventCondition_smallHiveBeetle(defense, totalHoney)
+        if totalHoney <= 39:
+            eventCondition_smallHiveBeetle(defense, totalHoney)
         
+            if defense < 0:
+                defense = 0
+            else:
+                defense = defense
+                
+        else:
+            eventCondition_normal()        
+                
         
+    
     elif eventIdentity == "pesticides":
         eventCondition_pesticides(population)
         
