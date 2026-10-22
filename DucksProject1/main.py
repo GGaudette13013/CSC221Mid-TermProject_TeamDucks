@@ -17,6 +17,7 @@ def main():
     defense_bees = 0
     totalHoney = 0
     additionalPopulation = 0
+    totalPopulation = 0
     # Title and program instructions
     welcome_introduction.display_welcome_functionality()
     dayCount, startingPopulation, game_mode = welcome_introduction.display_userInput_functionality()
@@ -36,7 +37,7 @@ def main():
                     
             # This is realtime mode :
             # population accumulators
-            totalPopulation = hivePopulations.totalPopulation_accumulator(startingPopulation, day, additionalPopulation)
+            totalPopulation = hivePopulations.totalPopulation_accumulator(startingPopulation, day, additionalPopulation, totalPopulation)
             
             
             # generate event
@@ -46,16 +47,16 @@ def main():
             
             # accumulates all the running totals including honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount
             startingHoney = honeyCollected.starterHoney_calc(startingPopulation)
-            honeyTotal = honeyCollected.totalHoney_calc(day, honeyAdd, startingHoney)
+            honeyTotal = honeyCollected.totalHoney_calc(day, honeyAdd, startingHoney, totalHoney)
             flower_multipier = honeyCollected.flowerMultipier_calc(event)
             nectarProduction = honeyCollected.nectarCollected_calc(foraging_bees, flower_multipier)
             # deleted additional totalPopulations repeat
             totalBeesForageing = hivePopulations.foragingPopulation_accumulators(foraging_bees)
-            TotalBeeDefenceCount = hivePopulations.defensePopulation_accumulators(defense_bees, day)
+            defense_bees = hivePopulations.defensePopulation_accumulators(defense_bees, day, defense_bees)
             
             
             # Displays updated info on info station - realtimeMode stuff
-            realtimeMode.realtimeMode_menu(honeyTotal, nectarProduction, totalPopulation, totalBeesForageing, TotalBeeDefenceCount)
+            realtimeMode.realtimeMode_menu(honeyTotal, nectarProduction, totalPopulation, totalBeesForageing, defense_bees)
             #Need to create a display functionality that displays event graphic to user. 
             #realtimeMode.realtimeMode_menu_eventDisplay_Normal() normal mode
             realtimeMode.realtimeMode_menu_operations()
@@ -63,14 +64,14 @@ def main():
             # Getting user task
             task = userTaskExecution.getUserTask()
             userTaskExecution.getUserTaskValidation(task)
-            taskAction = userTaskExecution.userTaskIdentification(task, totalPopulation, day, startingPopulation)
+            taskAction = userTaskExecution.userTaskIdentification(task, totalPopulation, day, startingPopulation, defense_bees)
             # how to affect the honey production. 
             honeyEaten, totalHoney, daysHoney = honeyCollected.dailyHoney_calc(eventID, startingPopulation, taskAction, task, day, totalPopulation)
             # this is probably going to double our honey... just temporary
             
             # Feed bees
             realtimeMode.realtimeMode_menu_FeedBees_functionality(task, daysHoney, totalHoney, totalPopulation, honeyEaten)
-
+            honeyAdd = daysHoney
     
     else:
         # simulation mode starts here 
