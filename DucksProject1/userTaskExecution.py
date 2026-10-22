@@ -39,14 +39,17 @@ def getUserTaskValidation(taskChoice):
 
 
 
-def userTaskIdentification(tasks):
+def userTaskIdentification(tasks, hivePopulation, day, startingPop):
     
     
     
     if tasks == "F":
+        MAX_POPULATION_PERCENT_CONSTANT = .83
         MINFORAGE = 201
-        MAXFORAGE = 40001
+        MAXFORAGE = hivePopulation * MAX_POPULATION_PERCENT_CONSTANT
+        
         population_forage = getUserForagePopulation()
+        
         while population_forage <= MINFORAGE or population_forage >= MAXFORAGE:
             print("   o         i n v a l i d     a m o u n t       ")    
             print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
@@ -55,7 +58,7 @@ def userTaskIdentification(tasks):
             population_forage = int(input("                                    "))
         
         hivePopulations.foragingPopulation_accumulators(population_forage)
-        
+        return population_forage
         
         
         
@@ -64,7 +67,7 @@ def userTaskIdentification(tasks):
         MINCREATE = 101
         MAXCREATE = 1851
         population_create = getUserCreateBeesPopulation()
-        while population_create <= MINCREATE or population_create >= MAXCREATE:
+        while population_create <= MINCREATE or population_create > MAXCREATE:
             print("   o         i n v a l i d     a m o u n t       ")    
             print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
             print(" o   o                                                                  o   o  ")
@@ -73,8 +76,8 @@ def userTaskIdentification(tasks):
         
         
         runningTotal = hivePopulations.totalPopulation
-        hivePopulations.createBeesPopulationAddition(population_create, runningTotal)
-            
+        hivePopulations.totalPopulation_accumulator(startingPop, day, population_create)
+        return population_create
             
     
     else:
@@ -87,8 +90,8 @@ def userTaskIdentification(tasks):
             print(" o   o                                                                  o   o  ")
             print("  o o                                                                    o o   ")
             population_defense = int(input("                                    "))
-        hivePopulations.defensePopulation_accumulators(population_defense)
-
+        hivePopulations.defensePopulation_accumulators(population_defense, day)
+        return population_defense
 
 
 def getUserForagePopulation():
