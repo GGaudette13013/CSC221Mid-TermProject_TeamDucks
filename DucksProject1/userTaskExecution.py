@@ -83,7 +83,7 @@ def userTaskIdentification(tasks, hivePopulation, day, startingPop, defenseBees)
         MINDEFENSE = 100
         MAXDEFENSE = 600
         population_defense = getUserDefensePopulation()
-        while population_defense <= MINDEFENSE or population_defense >= MAXDEFENSE:
+        while population_defense <= MINDEFENSE or population_defense > MAXDEFENSE:
             print("   o         i n v a l i d     a m o u n t       ")    
             print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
             print(" o   o                                                                  o   o  ")
