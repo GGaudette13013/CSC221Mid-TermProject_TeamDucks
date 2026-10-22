@@ -8,24 +8,29 @@ totalPopulation = 0
 totalDefensePopulation = 0
 
 # THIS FUNCTION AND CREATEBEESPOPULATIONADDITION DO THE SAME THING...NOT SURE IF THAT IS GOING TO BE A PROBLEM
-def totalPopulation_accumulator(population):
+def totalPopulation_accumulator(population, day, additionalPop):
     # population is from main input - starter
     # after starter, it is from tasks
     
+    if  day == 1:
+        additionalPop = 0
+        totalPopulation = population
+        
     
+    additionalPop = 0
+    totalPopulation = totalPopulation + additionalPop
     
-    totalPopulation = population
     
     return totalPopulation
 
 
 
-def createBeesPopulationAddition(population, totalPopulation):
+#def createBeesPopulationAddition(population, totalPopulation):
     #population is from task input
     #totalPopulation is from main
-    totalPopulation = totalPopulation + population
-    
-    return totalPopulation
+    #Created_bees = Created_bees
+    # I think we can scrap this function
+    #return totalPopulation
     
     
     
@@ -46,9 +51,12 @@ def foragingPopulation_accumulators(beesSentToForage):
 
 
  
-def defensePopulation_accumulators(beesSentToDefense):
-    totalDefensePopulation = 0
-    totalDefensePopulation = totalDefensePopulation + beesSentToDefense
+def defensePopulation_accumulators(beesSentToDefense, day):
+    if day == 1:
+        totalDefensePopulation = 100
+        
+    else:
+        totalDefensePopulation = totalDefensePopulation + beesSentToDefense
     
     
     
