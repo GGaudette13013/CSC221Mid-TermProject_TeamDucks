@@ -8,20 +8,20 @@ totalPopulation = 0
 totalDefensePopulation = 0
 
 # THIS FUNCTION AND CREATEBEESPOPULATIONADDITION DO THE SAME THING...NOT SURE IF THAT IS GOING TO BE A PROBLEM
-def totalPopulation_accumulator(population, day, additionalPop):
+def totalPopulation_accumulator(population, day, additionalPop, runningPopulation):
     # population is from main input - starter
     # after starter, it is from tasks
     
-    if  day == 1:
+    if day == 1:
         additionalPop = 0
-        totalPopulation = population
+        runningPopulation = population
         
     
-    additionalPop = 0
-    totalPopulation = totalPopulation + additionalPop
+    
+    runningPopulation = runningPopulation + additionalPop
     
     
-    return totalPopulation
+    return runningPopulation
 
 
 
