@@ -29,7 +29,7 @@ def totalHoney_calc(day, nethoney, starterHoney):
         return totalHoney
         
     else:
-        totalHoney = starterHoney
+        
         totalHoney = totalHoney + nethoney
         
         return totalHoney
@@ -90,6 +90,7 @@ def nectarConsumed_calc(daysNectar, dayTask, population, foragingBees):
         
         # Gavin's anti-negative scheme
         if netHoney < 0:
+            #kills bees from pop who did not get 1kg of honey!! if negative it is real bad
             population = population + netHoney 
             netHoney = 0
         else:
@@ -120,7 +121,7 @@ def dailyHoney_calc(event, starterPopulation, beesForaging, task, day, populatio
     
     
     
-    return honeyEaten, totalHoney
+    return honeyEaten, hiveHoney, nectar
     
     
     
