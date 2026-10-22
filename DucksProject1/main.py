@@ -10,6 +10,7 @@ from DucksProject1 import hivePopulations
 from DucksProject1 import honeyCollected
 from DucksProject1 import realtimeMode
 
+
 def main():
     # constants
     honeyAdd = 0
@@ -18,6 +19,7 @@ def main():
     totalHoney = 0
     additionalPopulation = 0
     totalPopulation = 0
+    totalDefensePopulation = 0
     # Title and program instructions
     welcome_introduction.display_welcome_functionality()
     dayCount, startingPopulation, game_mode = welcome_introduction.display_userInput_functionality()
@@ -52,11 +54,11 @@ def main():
             nectarProduction = honeyCollected.nectarCollected_calc(foraging_bees, flower_multipier)
             # deleted additional totalPopulations repeat
             totalBeesForageing = hivePopulations.foragingPopulation_accumulators(foraging_bees)
-            defense_bees = hivePopulations.defensePopulation_accumulators(defense_bees, day, defense_bees)
+            defense_bees = hivePopulations.defensePopulation_accumulators(defense_bees, day, totalDefensePopulation)
             
             
             # Displays updated info on info station - realtimeMode stuff
-            realtimeMode.realtimeMode_menu(honeyTotal, nectarProduction, totalPopulation, totalBeesForageing, defense_bees)
+            realtimeMode.realtimeMode_menu(honeyTotal, nectarProduction, totalPopulation, totalBeesForageing, totalDefensePopulation)
             #Need to create a display functionality that displays event graphic to user. 
             #realtimeMode.realtimeMode_menu_eventDisplay_Normal() normal mode
             realtimeMode.realtimeMode_menu_operations()
@@ -64,7 +66,7 @@ def main():
             # Getting user task
             task = userTaskExecution.getUserTask()
             userTaskExecution.getUserTaskValidation(task)
-            taskAction = userTaskExecution.userTaskIdentification(task, totalPopulation, day, startingPopulation, defense_bees)
+            taskAction = userTaskExecution.userTaskIdentification(task, totalPopulation, day, startingPopulation, totalDefensePopulation)
             # how to affect the honey production. 
             honeyEaten, totalHoney, daysHoney = honeyCollected.dailyHoney_calc(eventID, startingPopulation, taskAction, task, day, totalPopulation)
             # this is probably going to double our honey... just temporary
