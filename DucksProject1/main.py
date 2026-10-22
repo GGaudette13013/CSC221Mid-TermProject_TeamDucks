@@ -16,6 +16,7 @@ def main():
     foraging_bees = 0
     defense_bees = 0
     totalHoney = 0
+    additionalPopulation = 0
     # Title and program instructions
     welcome_introduction.display_welcome_functionality()
     dayCount, startingPopulation, game_mode = welcome_introduction.display_userInput_functionality()
@@ -35,7 +36,7 @@ def main():
                     
             # This is realtime mode :
             # population accumulators
-            totalPopulation = hivePopulations.totalPopulation_accumulator(startingPopulation)
+            totalPopulation = hivePopulations.totalPopulation_accumulator(startingPopulation, day, additionalPopulation)
             
             
             # generate event
@@ -48,27 +49,27 @@ def main():
             honeyTotal = honeyCollected.totalHoney_calc(day, honeyAdd, startingHoney)
             flower_multipier = honeyCollected.flowerMultipier_calc(event)
             nectarProduction = honeyCollected.nectarCollected_calc(foraging_bees, flower_multipier)
-            totalPopulation = hivePopulations.totalPopulation_accumulator(startingPopulation)
+            # deleted additional totalPopulations repeat
             totalBeesForageing = hivePopulations.foragingPopulation_accumulators(foraging_bees)
-            TotalBeeDefenceCount = hivePopulations.defensePopulation_accumulators(defense_bees)
+            TotalBeeDefenceCount = hivePopulations.defensePopulation_accumulators(defense_bees, day)
             
             
             # Displays updated info on info station - realtimeMode stuff
             realtimeMode.realtimeMode_menu(honeyTotal, nectarProduction, totalPopulation, totalBeesForageing, TotalBeeDefenceCount)
-            realtimeMode.realtimeMode_menu_eventDisplay_Normal()
+            #Need to create a display functionality that displays event graphic to user. 
+            #realtimeMode.realtimeMode_menu_eventDisplay_Normal() normal mode
             realtimeMode.realtimeMode_menu_operations()
+            
             # Getting user task
             task = userTaskExecution.getUserTask()
             userTaskExecution.getUserTaskValidation(task)
-            taskID = userTaskExecution.userTaskIdentification(task)
+            taskAction = userTaskExecution.userTaskIdentification(task, totalPopulation, day, startingPopulation)
             # how to affect the honey production. 
-            honeyEaten, totalHoney = honeyCollected.dailyHoney_calc(eventID, startingPopulation, foraging_bees, task, dayCount, totalPopulation)
-            starterHoney = honeyCollected.starterHoney_calc(startingPopulation)
+            honeyEaten, totalHoney, daysHoney = honeyCollected.dailyHoney_calc(eventID, startingPopulation, taskAction, task, day, totalPopulation)
             # this is probably going to double our honey... just temporary
-            hiveHoneyTotal = honeyCollected.totalHoney_calc(dayCount, totalHoney, starterHoney) # duplicated from above
             
             # Feed bees
-            realtimeMode.realtimeMode_menu_FeedBees_functionality(task, hiveHoneyTotal, totalHoney, totalPopulation, honeyEaten)
+            realtimeMode.realtimeMode_menu_FeedBees_functionality(task, daysHoney, totalHoney, totalPopulation, honeyEaten)
 
     
     else:
