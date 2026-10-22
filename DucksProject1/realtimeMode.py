@@ -295,12 +295,12 @@ def realtimeMode_menu_FeedBees_functionality(daysTask, totalNectar, totalHoney, 
         feed = realtimeMode_menu_FeedBeesDispSet1b()
     
     elif daysTask == "C":
-        userInput = realtimeMode_menu_FeedBeesDispset2a(totalHoney, totalNectar, totalPopulation)
+        userInput = realtimeMode_menu_FeedBeesDispset2a(totalHoney, totalNectar, totalPopulation, eatenHoney)
         realtimeMode_menu_FeedBees_functionality_validation(userInput)
         feed = realtimeMode_menu_FeedBeesDispSet2b()
         
     else:
-        userInput = realtimeMode_menu_FeedBeesDispset3a(totalHoney, totalNectar, totalPopulation)
+        userInput = realtimeMode_menu_FeedBeesDispset3a(totalHoney, totalNectar, totalPopulation, eatenHoney)
         realtimeMode_menu_FeedBees_functionality_validation(userInput)
         feed = realtimeMode_menu_FeedBeesDispSet3b()
         
