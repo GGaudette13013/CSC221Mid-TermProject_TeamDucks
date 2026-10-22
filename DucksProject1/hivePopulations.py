@@ -51,10 +51,12 @@ def foragingPopulation_accumulators(beesSentToForage):
 
 
  
-def defensePopulation_accumulators(beesSentToDefense, day):
+def defensePopulation_accumulators(beesSentToDefense, day, totalDefensePopulation):
     if day == 1:
         totalDefensePopulation = 100
-        
+        if totalDefensePopulation > 100:
+            totalDefensePopulation = 100
+    
     else:
         totalDefensePopulation = totalDefensePopulation + beesSentToDefense
     

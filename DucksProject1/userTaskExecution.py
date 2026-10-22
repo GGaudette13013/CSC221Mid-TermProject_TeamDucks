@@ -39,7 +39,7 @@ def getUserTaskValidation(taskChoice):
 
 
 
-def userTaskIdentification(tasks, hivePopulation, day, startingPop):
+def userTaskIdentification(tasks, hivePopulation, day, startingPop, defenseBees):
     
     
     
@@ -75,8 +75,7 @@ def userTaskIdentification(tasks, hivePopulation, day, startingPop):
             population_create = int(input("                                    "))
         
         
-        runningTotal = hivePopulations.totalPopulation
-        hivePopulations.totalPopulation_accumulator(startingPop, day, population_create)
+        hivePopulations.totalPopulation_accumulator(startingPop, day, population_create, hivePopulation)
         return population_create
             
     
@@ -90,7 +89,7 @@ def userTaskIdentification(tasks, hivePopulation, day, startingPop):
             print(" o   o                                                                  o   o  ")
             print("  o o                                                                    o o   ")
             population_defense = int(input("                                    "))
-        hivePopulations.defensePopulation_accumulators(population_defense, day)
+        hivePopulations.defensePopulation_accumulators(population_defense, day, defenseBees)
         return population_defense
 
 
