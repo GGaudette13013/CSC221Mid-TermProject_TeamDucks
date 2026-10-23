@@ -105,7 +105,7 @@ def getUserForagePopulation():
     print("  o o                                                                   o o    ")
     print("  o o                                                                    o o   ")
     print(" o   o           Enter the number of bees from your population          o   o  ")
-    print("  o o      you want to send to go foraging ( the maximum is 40,000 )     o o   ")
+    print("  o o          You can send less than 83% of your bees foraging.         o o   ")
     print("   o o                                                                    o o  ")
     print("  o   o                                                                  o   o ")
     print("   o o                                                                    o o  ")
