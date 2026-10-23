@@ -47,7 +47,8 @@ def main():
             
             # accumulates all the running totals including honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount
             startingHoney = honeyCollected.starterHoney_calc(startingPopulation)
-            flower_multipier = honeyCollected.flowerMultipier_calc(event)
+            honeyTotal = honeyCollected.totalHoney_calc(day, honeyAdd, startingHoney, totalHoney)
+            flower_multipier = honeyCollected.flowerMultiplier_calc(event)
             nectarProduction = honeyCollected.nectarCollected_calc(foraging_bees, flower_multipier)
             # deleted additional totalPopulations repeat
             totalBeesForageing = hivePopulations.foragingPopulation_accumulators(foraging_bees)
