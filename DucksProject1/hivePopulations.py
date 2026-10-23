@@ -59,7 +59,7 @@ def defensePopulation_accumulators(beesSentToDefense, day, totalDefensePopulatio
     
     else:
         totalDefensePopulation = totalDefensePopulation + beesSentToDefense
-    
+        beesSentToDefense = 0
     
     
     return totalDefensePopulation
