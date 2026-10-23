@@ -56,7 +56,7 @@ def main():
             
             
             # Displays updated info on info station - realtimeMode stuff
-            realtimeMode.realtimeMode_menu(honeyTotal, nectarProduction, totalPopulation, totalBeesForageing, defense_bees)
+            realtimeMode.realtimeMode_menu(totalHoney, nectarProduction, totalPopulation, totalBeesForageing, defense_bees)
             #Need to create a display functionality that displays event graphic to user. 
             #realtimeMode.realtimeMode_menu_eventDisplay_Normal() normal mode
             realtimeMode.realtimeMode_menu_operations()
@@ -66,7 +66,7 @@ def main():
             userTaskExecution.getUserTaskValidation(task)
             taskAction = userTaskExecution.userTaskIdentification(task, totalPopulation, day, startingPopulation, defense_bees)
             # how to affect the honey production. 
-            honeyEaten, totalHoney, daysHoney = honeyCollected.dailyHoney_calc(eventID, startingPopulation, taskAction, task, day, totalPopulation)
+            honeyEaten, totalHoney, daysHoney = honeyCollected.dailyHoney_calc(eventID, startingPopulation, taskAction, task, day, totalPopulation, totalHoney)
             # this is probably going to double our honey... just temporary
             
             # Feed bees
