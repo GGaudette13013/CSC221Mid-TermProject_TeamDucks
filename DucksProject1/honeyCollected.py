@@ -4,7 +4,7 @@ Program name: honeyCollected.py
 Description: Calculates nectar collection and honey production with environmental events.
 '''
 
-
+import envEvent
 
 
 # Constants
@@ -68,9 +68,9 @@ def flowerMultiplier_calc(event):
     
     
       
-def nectarCollected_calc(foragingBees, flowerMultipier):
+def nectarCollected_calc(foragingBees, flowerMultiplier):
     
-    nectar = foragingBees * PER_BEE_NECTAR * flowerMultipier
+    nectar = foragingBees * PER_BEE_NECTAR * flowerMultiplier
     
     return nectar
     
@@ -110,38 +110,29 @@ def nectarConsumed_calc(daysNectar, dayTask, population, foragingBees):
     
     
 def dailyHoney_calc(event, starterPopulation, beesForaging, task, day, population):
+    
+    if isinstance(event, int):
+        event = envEvent.event_identifier(event)
+    
     if task == "F":
-        
-        
-        flowerMultipier = flowerMultiplier_calc(event)
-        nectar = nectarCollected_calc(beesForaging, flowerMultipier)
+         
+        flowerMultiplier = flowerMultiplier_calc(event)
+        nectar = nectarCollected_calc(beesForaging, flowerMultiplier)
         
         dayshoney, honeyEaten = nectarConsumed_calc(nectar, task, population, beesForaging)
         
         starterHoney = starterHoney_calc(starterPopulation)
-        hiveHoney = totalHoney_calc(day, dayshoney, starterHoney, population)
+        hiveHoney = totalHoney_calc(day, dayshoney, starterHoney, totalHoney)
+        
     else:
+        
         beesForaging = 0
         flowerMultipier = 0
         nectar = nectarCollected_calc(beesForaging, flowerMultipier)
         dayshoney, honeyEaten = nectarConsumed_calc(nectar, task, population, beesForaging)
         starterHoney = starterHoney_calc(starterPopulation)
-        hiveHoney = totalHoney_calc(day, dayshoney, starterHoney, population)
+        hiveHoney = totalHoney_calc(day, dayshoney, starterHoney, totalHoney)
         
     
     return honeyEaten, hiveHoney, nectar
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
     
