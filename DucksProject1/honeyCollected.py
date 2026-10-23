@@ -127,8 +127,9 @@ def dailyHoney_calc(event, starterPopulation, beesForaging, task, day, populatio
     else:
         
         beesForaging = 0
-        flowerMultipier = 0
-        nectar = nectarCollected_calc(beesForaging, flowerMultipier)
+        flowerMultiplier = 0
+        nectar = nectarCollected_calc(beesForaging, flowerMultiplier)
+        
         dayshoney, honeyEaten = nectarConsumed_calc(nectar, task, population, beesForaging)
         starterHoney = starterHoney_calc(starterPopulation)
         hiveHoney = totalHoney_calc(day, dayshoney, starterHoney, totalHoney)
