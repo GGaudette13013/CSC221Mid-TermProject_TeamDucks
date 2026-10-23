@@ -6,10 +6,16 @@ Description:
 from DucksProject1 import userInput
 from DucksProject1 import userTaskExecution
 
+def realtimeMode_menu_CalcDaysRemaining(daysTotal, today):
+    dayLeft = today - daysTotal
+    return dayLeft
+    
+    
 
-def realtimeMode_menu(honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount):
+
+def realtimeMode_menu(honeyTotal, daysLeft, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount):
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o   ")
-    print(" o     HONEY PRODUCION (KG): ", honeyTotal, "          NECTAR PRODUCTION: ", nectarProduction, "            BEEHIVE POPULATION: ", totalBeehivePopulation, "         o  ")
+    print(" o     HONEY PRODUCION (KG): ", honeyTotal, "          Days Remaining: ", daysLeft, "            BEEHIVE POPULATION: ", totalBeehivePopulation, "         o  ")
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o   ")
     print("                                                                                 o                       o  ")
     print("                                                                                  o BEES FORAGING :", totalBeesForageing, "    o   ")
@@ -191,7 +197,7 @@ def realtimeMode_menu_FeedBeesDispset1a(totalHoney, totalNectar, totalPopulation
     print("  o                              Total Honey: ", totalHoney,"                                                                       o  ")
     print(" o                     Honey Collected Today: ", totalNectar, "                                                                        o ")
     print("  o                 Total Beehive Population: ", totalPopulation, "                                                                         o  ")
-    print(" o                                                                                                                      o ")
+    print(" o                     Total Hive Consumption: ",  beeConsumption,"                                                       o ")
     print("  o                             P R E S S     E N T E R   T O   C O N T I N U E                                        o  ")
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
     input("                                      ")
@@ -225,8 +231,8 @@ def realtimeMode_menu_FeedBeesDispset2a(totalHoney, totalNectar, totalPopulation
     print("  o                              Total Honey: ", totalHoney,"                                                                       o  ")
     print(" o                     Honey Collected Today: ", totalNectar, "                                                                        o ")
     print("  o                 Total Beehive Population: ", totalPopulation, "                                                                         o  ")
-    print(" o                                                                                                                      o ")
-    print("  o                                                                                                                    o  ")
+    print(" o                  Total Hive Consumption: ",  beeConsumption,"                                                       o ")
+    print("  o                    P R E S S     E N T E R   T O   C O N T I N U E                                                   o  ")
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
     input("                                      ")
     
@@ -261,7 +267,7 @@ def realtimeMode_menu_FeedBeesDispset3a(totalHoney, totalNectar, totalPopulation
     print(" o                     Honey Collected Today: ", totalNectar, "                                                                        o ")
     print("  o                 Total Beehive Population: ", totalPopulation, "                                                                         o  ")
     print(" o                    Total Hive Consumption: ",  beeConsumption,"                                                                  o ")
-    print("  o                                                                                                                    o  ")
+    print("  o                       P R E S S     E N T E R   T O   C O N T I N U E                                            o  ")
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  ")
     input("                                      ")
     
@@ -291,18 +297,18 @@ def realtimeMode_menu_FeedBees_functionality(daysTask, totalNectar, totalHoney, 
     if daysTask == "F":
         
         userInput = realtimeMode_menu_FeedBeesDispset1a(totalHoney, totalNectar, totalPopulation, eatenHoney)
-        realtimeMode_menu_FeedBees_functionality_validation(userInput)
-        feed = realtimeMode_menu_FeedBeesDispSet1b()
+        feed = realtimeMode_menu_FeedBees_functionality_validation(userInput)
+        
     
     elif daysTask == "C":
         userInput = realtimeMode_menu_FeedBeesDispset2a(totalHoney, totalNectar, totalPopulation, eatenHoney)
-        realtimeMode_menu_FeedBees_functionality_validation(userInput)
-        feed = realtimeMode_menu_FeedBeesDispSet2b()
+        feed = realtimeMode_menu_FeedBees_functionality_validation(userInput)
+        
         
     else:
         userInput = realtimeMode_menu_FeedBeesDispset3a(totalHoney, totalNectar, totalPopulation, eatenHoney)
-        realtimeMode_menu_FeedBees_functionality_validation(userInput)
-        feed = realtimeMode_menu_FeedBeesDispSet3b()
+        feed = realtimeMode_menu_FeedBees_functionality_validation(userInput)
+        
         
         
     

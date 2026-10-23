@@ -20,68 +20,73 @@ def main():
     totalPopulation = 0
     # Title and program instructions
     welcome_introduction.display_welcome_functionality()
-    dayCount, startingPopulation, game_mode = welcome_introduction.display_userInput_functionality()
+    dayCount, startingPopulation = welcome_introduction.display_userInput_functionality()
     
     # for loop for days starts here after days and starer population has been given
     
-    if game_mode == "R":
     
-            # realtime mode starts here 
-            # Get simulation days and starting bee population
-        
-        # realtime mode:
-        
-        
-        # Loop through each simulation day
-        for day in range(1, dayCount + 1, 1):
-                    
-            # This is realtime mode :
-            # population accumulators
-            totalPopulation = hivePopulations.totalPopulation_accumulator(startingPopulation, day, additionalPopulation, totalPopulation)
-            
-            
-            # generate event
-            eventNumber = envEvent.event_randomizer()
-            eventID = envEvent.event_identifier(eventNumber)
-            event = envEvent.event_handler(eventID, foraging_bees, totalPopulation, defense_bees, totalHoney)
-            
-            # accumulates all the running totals including honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount
-            startingHoney = honeyCollected.starterHoney_calc(startingPopulation)
-            honeyTotal = honeyCollected.totalHoney_calc(day, honeyAdd, startingHoney, totalHoney)
-            flower_multipier = honeyCollected.flowerMultiplier_calc(event)
-            nectarProduction = honeyCollected.nectarCollected_calc(foraging_bees, flower_multipier)
-            # deleted additional totalPopulations repeat
-            totalBeesForageing = hivePopulations.foragingPopulation_accumulators(foraging_bees)
-            defense_bees = hivePopulations.defensePopulation_accumulators(defense_bees, day, defense_bees)
-            
-            
-            # Displays updated info on info station - realtimeMode stuff
-            realtimeMode.realtimeMode_menu(totalHoney, nectarProduction, totalPopulation, totalBeesForageing, defense_bees)
-            #Need to create a display functionality that displays event graphic to user. 
-            #realtimeMode.realtimeMode_menu_eventDisplay_Normal() normal mode
-            realtimeMode.realtimeMode_menu_operations()
-            
-            # Getting user task
-            task = userTaskExecution.getUserTask()
-            userTaskExecution.getUserTaskValidation(task)
-            taskAction = userTaskExecution.userTaskIdentification(task, totalPopulation, day, startingPopulation, defense_bees)
-            # how to affect the honey production. 
-            honeyEaten, totalHoney, daysHoney = honeyCollected.dailyHoney_calc(eventID, startingPopulation, taskAction, task, day, totalPopulation, totalHoney)
-            # this is probably going to double our honey... just temporary
-            
-            # Feed bees
-            realtimeMode.realtimeMode_menu_FeedBees_functionality(task, daysHoney, totalHoney, totalPopulation, honeyEaten)
-            honeyAdd = daysHoney
+
+        # realtime mode starts here 
+        # Get simulation days and starting bee population
     
-    else:
-        # simulation mode starts here 
-        print("smiles")
+    # realtime mode:
+    
+    
+    # Loop through each simulation day
+    for day in range(1, dayCount + 1, 1):
+                
+        # This is realtime mode :
+        # population accumulators
+        totalPopulation = hivePopulations.totalPopulation_accumulator(startingPopulation, day, additionalPopulation, totalPopulation)
         
         
+        # generate event
+        eventNumber = envEvent.event_randomizer()
+        eventID = envEvent.event_identifier(eventNumber)
+        event = envEvent.event_handler(eventID, foraging_bees, totalPopulation, defense_bees, totalHoney)
+        
+        # accumulates all the running totals including honeyTotal, nectarProduction, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount
+        startingHoney = honeyCollected.starterHoney_calc(startingPopulation)
+        totalHoney = honeyCollected.totalHoney_calc(day, honeyAdd, startingHoney, totalHoney)
+        flower_multipier = honeyCollected.flowerMultiplier_calc(event)
+        nectarProduction = honeyCollected.nectarCollected_calc(foraging_bees, flower_multipier)
+        # deleted additional totalPopulations repeat
+        foraging_bees = hivePopulations.foragingPopulation_accumulators(foraging_bees)
+        Defense_beesTotalFromPreviousDay = 0
+        defense_bees = hivePopulations.defensePopulation_accumulators(defense_bees, day, Defense_beesTotalFromPreviousDay)
         
         
+        # Displays updated info on info station - realtimeMode stuff
+        daysremaining = realtimeMode.realtimeMode_menu_CalcDaysRemaining(day, dayCount)
+        realtimeMode.realtimeMode_menu(totalHoney, daysremaining, totalPopulation, foraging_bees, defense_bees)
+        #Need to create a display functionality that displays event graphic to user. 
+        #realtimeMode.realtimeMode_menu_eventDisplay_Normal() normal mode
+        realtimeMode.realtimeMode_menu_operations()
         
+        # Getting user task
+        task = userTaskExecution.getUserTask()
+        task = userTaskExecution.getUserTaskValidation(task)
+        foraging_bees, totalPopulation, defense_bees = userTaskExecution.userTaskIdentification(task, totalPopulation, day, startingPopulation, defense_bees)
         
+        # how to affect the honey production. 
+        honeyEaten, totalHoney, daysHoney = honeyCollected.dailyHoney_calc(eventID, startingPopulation, foraging_bees, task, day, totalPopulation, totalHoney)
+        # this is probably going to double our honey... just temporary
+        
+        # Feed bees
+        realtimeMode.realtimeMode_menu_FeedBees_functionality(task, daysHoney, totalHoney, totalPopulation, honeyEaten)
+        # adds back the forage pop to total pop
+        if day == 1:
+            AwakeBees = 0
+        else:
+            AwakeBees = foraging_bees
+        foraging_bees = hivePopulations.foragingPopulation_accumulators(AwakeBees)
+        totalPopulation = totalPopulation + foraging_bees
+    
+    
+    
+    
+    
+    
         
         
         

@@ -9,6 +9,7 @@ from DucksProject1 import hivePopulations
 from DucksProject1 import realtimeMode
 
 
+
 def getUserTask():
     
     print("  o o  ")
@@ -33,64 +34,89 @@ def getUserTaskValidation(taskChoice):
         taskChoice = getUserTask()
     
     return taskChoice
-    
-    
-    
 
 
+    
+    
 
 def userTaskIdentification(tasks, hivePopulation, day, startingPop, defenseBees):
     
-    
-    
     if tasks == "F":
-        MAX_POPULATION_PERCENT_CONSTANT = .83
-        MINFORAGE = 201
-        MAXFORAGE = hivePopulation * MAX_POPULATION_PERCENT_CONSTANT
-        
-        population_forage = getUserForagePopulation()
-        
-        while population_forage <= MINFORAGE or population_forage >= MAXFORAGE:
-            print("   o         i n v a l i d     a m o u n t       ")    
-            print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
-            print(" o   o                                                                  o   o  ")
-            print("  o o                                                                    o o   ")
-            population_forage = int(input("                                    "))
-        
-        hivePopulations.foragingPopulation_accumulators(population_forage)
-        return population_forage
+        foragePop = userTaskIdentificationForage(hivePopulation)
+        DefensePop = defenseBees
+        # subtract from total pop
+        foragePop_SubtractTotal = foragePop * (-1)
+        # new total pop
+        createPop = hivePopulations.totalPopulation_accumulator(startingPop, day, foragePop_SubtractTotal, hivePopulation)
         
         
-        
+        return foragePop, createPop, DefensePop
         
     elif tasks == "C":
-        MINCREATE = 101
-        MAXCREATE = 1851
-        population_create = getUserCreateBeesPopulation()
-        while population_create <= MINCREATE or population_create > MAXCREATE:
-            print("   o         i n v a l i d     a m o u n t       ")    
-            print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
-            print(" o   o                                                                  o   o  ")
-            print("  o o                                                                    o o   ")
-            population_create = int(input("                                    "))
-        
-        
-        hivePopulations.totalPopulation_accumulator(startingPop, day, population_create, hivePopulation)
-        return population_create
+        createPop = userTaskIdentificationCreate(startingPop, day, hivePopulation)
+        foragePop = 0
+        DefensePop = defenseBees
+        return foragePop, createPop, DefensePop
             
-    
     else:
-        MINDEFENSE = 100
-        MAXDEFENSE = 600
-        population_defense = getUserDefensePopulation()
-        while population_defense <= MINDEFENSE or population_defense > MAXDEFENSE:
-            print("   o         i n v a l i d     a m o u n t       ")    
-            print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
-            print(" o   o                                                                  o   o  ")
-            print("  o o                                                                    o o   ")
-            population_defense = int(input("                                    "))
-        hivePopulations.defensePopulation_accumulators(population_defense, day, defenseBees)
-        return population_defense
+        DefensePop = userTaskIdentificationDefense(day, defenseBees)
+        foragePop = 0
+        createPop = hivePopulations.totalPopulation_accumulator(startingPop, day, DefensePop, hivePopulation)
+        return foragePop, createPop, DefensePop
+   
+def userTaskIdentificationForage(population):
+    MAX_POPULATION_PERCENT_CONSTANT = .83
+    MINFORAGE = 201
+    MAXFORAGE = population * MAX_POPULATION_PERCENT_CONSTANT
+    
+    population_forage = getUserForagePopulation()
+    
+    while population_forage <= MINFORAGE or population_forage >= MAXFORAGE:
+        print("   o         i n v a l i d     a m o u n t       ")    
+        print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
+        print(" o   o                                                                  o   o  ")
+        print("  o o                                                                    o o   ")
+        population_forage = int(input("                                    "))
+    
+    population_forage = hivePopulations.foragingPopulation_accumulators(population_forage)
+    return population_forage
+    
+       
+def userTaskIdentificationCreate(startingPop, day, hivePopulation):
+    MINCREATE = 101
+    MAXCREATE = 1851
+    population_create = getUserCreateBeesPopulation()
+    while population_create <= MINCREATE or population_create > MAXCREATE:
+        print("   o         i n v a l i d     a m o u n t       ")    
+        print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
+        print(" o   o                                                                  o   o  ")
+        print("  o o                                                                    o o   ")
+        population_create = int(input("                                    "))
+    
+    
+    population_create = hivePopulations.totalPopulation_accumulator(startingPop, day, population_create, hivePopulation)
+    return population_create
+     
+    
+    
+def userTaskIdentificationDefense(day, defenseBees):
+    MINDEFENSE = 100
+    MAXDEFENSE = 600
+    population_defense = getUserDefensePopulation()
+    while population_defense <= MINDEFENSE or population_defense > MAXDEFENSE:
+        print("   o         i n v a l i d     a m o u n t       ")    
+        print("  o o          E N T E R     B E E    A M O U N T     B E L O W          o o   ")
+        print(" o   o                                                                  o   o  ")
+        print("  o o                                                                    o o   ")
+        population_defense = int(input("                                    "))
+    
+    population_defense = hivePopulations.defensePopulation_accumulators(population_defense, day, defenseBees)
+    return population_defense
+
+
+   
+
+
 
 
 def getUserForagePopulation():
