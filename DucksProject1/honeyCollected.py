@@ -13,8 +13,9 @@ PER_BEE_CONSUMED = 0.00060
 PER_BEE_HONEY = 0.00012
 START_HONEY_RATE = 0.00080
 OTHER_BEES_CONSUMPTION = 0.00025
-flowerMultipier = 1.0
+flowerMultiplier = 1.0
 totalHoney = 0
+
 '''
 Starting values:
 
@@ -50,7 +51,8 @@ def starterHoney_calc(population):
 
 
 
-def flowerMultipier_calc(event):
+def flowerMultiplier_calc(event):
+    global flowerMultiplier
     
     if event == "drought":
         flowerMultiplier = 0.5
@@ -62,7 +64,7 @@ def flowerMultipier_calc(event):
         flowerMultiplier = 1.0
     
     
-    return flowerMultipier
+    return flowerMultiplier
     
     
       
@@ -111,7 +113,7 @@ def dailyHoney_calc(event, starterPopulation, beesForaging, task, day, populatio
     if task == "F":
         
         
-        flowerMultipier = flowerMultipier_calc(event)
+        flowerMultipier = flowerMultiplier_calc(event)
         nectar = nectarCollected_calc(beesForaging, flowerMultipier)
         
         dayshoney, honeyEaten = nectarConsumed_calc(nectar, task, population, beesForaging)
