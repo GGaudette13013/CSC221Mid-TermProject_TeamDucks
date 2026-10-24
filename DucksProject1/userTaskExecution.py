@@ -45,9 +45,7 @@ def userTaskIdentification(tasks, hivePopulation, day, startingPop, defenseBees)
         foragePop = userTaskIdentificationForage(hivePopulation)
         DefensePop = defenseBees
         # subtract from total pop
-        foragePop_SubtractTotal = foragePop * (-1)
-        # new total pop
-        createPop = hivePopulations.totalPopulation_accumulator(startingPop, day, foragePop_SubtractTotal, hivePopulation)
+        createPop = hivePopulation
         
         
         return foragePop, createPop, DefensePop
@@ -61,7 +59,7 @@ def userTaskIdentification(tasks, hivePopulation, day, startingPop, defenseBees)
     else:
         DefensePop = userTaskIdentificationDefense(day, defenseBees)
         foragePop = 0
-        createPop = hivePopulations.totalPopulation_accumulator(startingPop, day, DefensePop, hivePopulation)
+        createPop = hivePopulation
         return foragePop, createPop, DefensePop
    
 def userTaskIdentificationForage(population):
@@ -94,8 +92,7 @@ def userTaskIdentificationCreate(startingPop, day, hivePopulation):
         population_create = int(input("                                    "))
     
     
-    population_create = hivePopulations.totalPopulation_accumulator(startingPop, day, population_create, hivePopulation)
-    return population_create
+    return hivePopulation + population_create
      
     
     
@@ -131,7 +128,7 @@ def getUserForagePopulation():
     print("  o o                                                                   o o    ")
     print("  o o                                                                    o o   ")
     print(" o   o           Enter the number of bees from your population          o   o  ")
-    print("  o o      you want to send to go foraging ( the maximum is 40,000 )     o o   ")
+    print("  o o            You can send less than 83% of your bees foraging.       o o   ")
     print("   o o                                                                    o o  ")
     print("  o   o                                                                  o   o ")
     print("   o o                                                                    o o  ")

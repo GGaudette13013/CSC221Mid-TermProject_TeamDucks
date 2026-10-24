@@ -4,7 +4,7 @@ Program name: honeyCollected.py
 Description: Calculates nectar collection and honey production with environmental events.
 '''
 
-import envEvent
+from DucksProject1 import envEvent
 
 
 # Constants
@@ -15,14 +15,6 @@ START_HONEY_RATE = 0.00080
 OTHER_BEES_CONSUMPTION = 0.00025
 flowerMultiplier = 1.0
 totalHoney = 0
-
-'''
-Starting values:
-
-Open to change later but this is more of a place holder for now; I have plans to change this later on.
-'''
-
-
 
 def totalHoney_calc(day, nethoney, starterHoney, totalHoney):
     if day == 1:
@@ -62,10 +54,10 @@ def flowerMultiplier_calc(event):
         flowerMultiplier = 0.5
 
     elif event == "rainy":
-        flowerMultiplier = 1.5
+        flowerMultiplier = 1.0
 
     else:
-        flowerMultiplier = 1.0
+        flowerMultiplier = 1.5
     
     
     return flowerMultiplier
@@ -106,11 +98,15 @@ def nectarConsumed_calc(daysNectar, dayTask, population, foragingBees):
     
 def dailyHoney_calc(event, starterPopulation, beesForaging, task, day, population, totalHoney):
     if task == "F":
-         
+        originalBees = beesForaging
         flowerMultiplier = flowerMultiplier_calc(event)
+
+        if event == "rainy":
+            beesForaging = int(beesForaging * 0.70)
+
         nectar = nectarCollected_calc(beesForaging, flowerMultiplier)
         
-        dayshoney, honeyEaten = nectarConsumed_calc(nectar, task, population, beesForaging)
+        dayshoney, honeyEaten = nectarConsumed_calc(nectar, task, population, originalBees)
         
         starterHoney = starterHoney_calc(starterPopulation)
         hiveHoney = totalHoney_calc(day, dayshoney, starterHoney, totalHoney)

@@ -1,7 +1,7 @@
 '''
 Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
 Program name: userInput.py
-Description:  
+Description: Gets the number of days and starting bee population from the user and makes sure both are within the allowed ranges. 
 '''
 from DucksProject1 import welcome_introduction
 

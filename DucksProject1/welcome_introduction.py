@@ -1,7 +1,7 @@
 '''
 Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
 Program name: simulation_mode#starter.py
-Description:  
+Description:Displays the welcome screen for Beehive Prepper and introduces the player to the beehive simulation.
 '''
 
 from DucksProject1 import userInput
@@ -66,8 +66,8 @@ def display_instructions_welcome_DispSet1():
     print("  o o             o o o o o o o o o o o o o o o o o o o o o o            o o   ")
     print("  o o                                                                    o o   ")
     print(" o   o                                                                  o   o  ")
-    print("  o o      Welcome to Beehive Prepper!  In this simulation you can       o o   ")
-    print("   o o     choose one of two modes: Simulation mode or  Realtime mode     o o  ")
+    print(" o  o     Welcome to Beehive Prepper! In this simulation you can     o  o ")
+    print(" o  o     manage your beehive and prepare it for winter.             o  o ")
     print("  o   o                                                                  o   o ")
     print("   o o                                                                    o o  ")
     print("  o o          P R E S S     E N T E R   T O   C O N T I N U E           o o   ")

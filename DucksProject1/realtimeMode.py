@@ -1,7 +1,7 @@
 '''
 Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
 Program name: simulation_mode#starter.py
-Description:  
+Description: Displays the beehive's current honey supply, population, defense, and days remaining during the simulation.
 '''
 from DucksProject1 import userInput
 from DucksProject1 import userTaskExecution
@@ -15,7 +15,7 @@ def realtimeMode_menu_CalcDaysRemaining(daysTotal, today):
 
 def realtimeMode_menu(honeyTotal, daysLeft, totalBeehivePopulation, totalBeesForageing, TotalBeeDefenceCount):
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o   ")
-    print(" o     HONEY PRODUCION (KG): ", honeyTotal, "          Days Remaining: ", daysLeft, "            BEEHIVE POPULATION: ", totalBeehivePopulation, "         o  ")
+    print(" o     HONEY PRODUCION (KG): ", format (honeyTotal, ".2f"), " Days Remaining: ", daysLeft, "            BEEHIVE POPULATION: ", totalBeehivePopulation, "         o  ")
     print("  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o  o o   ")
     print("                                                                                 o                       o  ")
     print("                                                                                  o BEES FORAGING :", totalBeesForageing, "    o   ")
@@ -50,7 +50,7 @@ def realtimeMode_menu_eventDisplay_Hornets():
     print("        oo:.:.:::.:.           *    *     *  * **                                     ")
     print("        ooooooooo                *          * * *                                     ")
     print("        EVENT STATUS: Hornets                                                         ")
-    print("                      kills beehive population by 70% and all defense bees are killed ")
+    print("                       kills beehive population by 20% and reduces defense bees by 20%")
     print("\t")
     print("\t")
     
@@ -64,7 +64,7 @@ def realtimeMode_menu_eventDisplay_BlackBear():
     print("  |    \oo:. .:.:  ___    )  .. :.:.  .          ")
     print("  |     ooooooooo::.::.  .. . .::.  ..           ")
     print("  {     EVENT STATUS: Black bear!!                 ")
-    print("                      destroys beehive defense by 50% and honey production by 50%")
+    print(" reduces bee defense by 50% and stored honey by 50%")
     print("\t")
     print("\t")
 
@@ -194,7 +194,7 @@ def realtimeMode_menu_FeedBeesDispset1a(totalHoney, totalNectar, totalPopulation
     print(" o                                                                                                                      o ")
     print("  o                     All  bees  return  home  from  foraging  and  are  very  hungry.                               o  ")
     print(" o                      It  is  time  to  feed  the  hive  with  the  honey  you  have.                                 o ")
-    print("  o                              Total Honey: ", totalHoney,"                                                                       o  ")
+    print("  o                              Total Honey: ", format(totalHoney, ".2f"), "                                                                       o  ")
     print(" o                     Honey Collected Today: ", totalNectar, "                                                                        o ")
     print("  o                 Total Beehive Population: ", totalPopulation, "                                                                         o  ")
     print(" o                     Total Hive Consumption: ",  beeConsumption,"                                                       o ")
@@ -228,7 +228,7 @@ def realtimeMode_menu_FeedBeesDispset2a(totalHoney, totalNectar, totalPopulation
     print(" o                                                                                                                      o ")
     print("  o                    The bees have been busy increasing the population within the hive                               o  ")
     print(" o                      It  is  time  to  feed  the  hive  with  the  honey  you  have.                                 o ")
-    print("  o                              Total Honey: ", totalHoney,"                                                                       o  ")
+    print("  o                 Total Honey: ", format(totalHoney, ".2f"), "                o  ")
     print(" o                     Honey Collected Today: ", totalNectar, "                                                                        o ")
     print("  o                 Total Beehive Population: ", totalPopulation, "                                                                         o  ")
     print(" o                  Total Hive Consumption: ",  beeConsumption,"                                                       o ")
@@ -263,7 +263,7 @@ def realtimeMode_menu_FeedBeesDispset3a(totalHoney, totalNectar, totalPopulation
     print(" o                                                                                                                      o ")
     print("  o                    The bees are ready to sleep after a long day of guarding the nest                               o  ")
     print(" o                      It  is  time  to  feed  the  hive  with  the  honey  you  have.                                 o ")
-    print("  o                              Total Honey: ", totalHoney,"                                                                       o  ")
+    print("  o                 Total Honey: ", format(totalHoney, ".2f"), "                o  ")
     print(" o                     Honey Collected Today: ", totalNectar, "                                                                        o ")
     print("  o                 Total Beehive Population: ", totalPopulation, "                                                                         o  ")
     print(" o                    Total Hive Consumption: ",  beeConsumption,"                                                                  o ")

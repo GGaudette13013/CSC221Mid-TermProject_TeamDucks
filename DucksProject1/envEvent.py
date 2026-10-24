@@ -1,7 +1,7 @@
 '''
 Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
 Program name: envEvent.py
-Description:  
+Description:  Generates random environmental events that affect the beehive's honey production, population, and defense.
 '''
 from random import randint
 
@@ -16,7 +16,6 @@ def event_randomizer():
     
     return event
     
-    #IF YOU SEE THIS IT MEANS GAVIN FUNCTION USING GIT
 
 
 
@@ -75,18 +74,18 @@ def eventCondition_rainy(forage_pop):
     
     weather = "rainy"
     
-    forage_pop = forage_pop * RAINY_FORAGING_RATE
+    forage_pop = int(forage_pop * RAINY_FORAGING_RATE)
     
     return weather, forage_pop
     
 
-def eventCondition_blackBear(population, totalHoney):
+def eventCondition_blackBear(defense, totalHoney):
     BEAR_ATTACK_CONSTANT = .50
-    
-    population = population * BEAR_ATTACK_CONSTANT
+
+    defense = int(defense * BEAR_ATTACK_CONSTANT)
     totalHoney = totalHoney * BEAR_ATTACK_CONSTANT
-    
-    return population, totalHoney
+
+    return defense, totalHoney
     
     
     
@@ -95,11 +94,11 @@ def eventCondition_blackBear(population, totalHoney):
 def eventCondition_hornets(defense, population, totalHoney):
     
     HORNET_ATTACK_CONSTANT = .80
-    HORNETS_HONEY = .20
+    HORNETS_HONEY = .80
     
 
     defense = defense * HORNET_ATTACK_CONSTANT
-    popultion = population * HORNET_ATTACK_CONSTANT
+    population = population * HORNET_ATTACK_CONSTANT
     totalHoney = totalHoney * HORNETS_HONEY
     
     return defense, population, totalHoney
@@ -146,16 +145,16 @@ def event_handler(eventIdentity, forage_pop, population, defense, totalHoney):
         eventCondition_drought()
     
     elif eventIdentity == "rainy":
-        eventCondition_rainy(forage_pop)
+        weather, forage_pop = eventCondition_rainy(forage_pop)
         
         
     elif eventIdentity == "black bear":
-        eventCondition_blackBear(population, totalHoney)
+        defense, totalHoney = eventCondition_blackBear(defense, totalHoney)
         
         
     elif eventIdentity == "hornets":
-        if defense >= 500:
-            eventCondition_hornets(defense, population, totalHoney)
+        if defense < 500:
+            defense, population, totalHoney = eventCondition_hornets(defense, population, totalHoney)
         
         else:
             
@@ -164,7 +163,7 @@ def event_handler(eventIdentity, forage_pop, population, defense, totalHoney):
         
     elif eventIdentity == "small hive beetle":
         if totalHoney <= 39:
-            eventCondition_smallHiveBeetle(defense, totalHoney)
+            defense, totalHoney = eventCondition_smallHiveBeetle(defense, totalHoney)
         
             if defense < 0:
                 defense = 0
@@ -177,14 +176,21 @@ def event_handler(eventIdentity, forage_pop, population, defense, totalHoney):
         
     
     elif eventIdentity == "pesticides":
-        eventCondition_pesticides(population)
+        population = eventCondition_pesticides(population)
         
     
     else:
         eventCondition_normal()
     
-    
-    
+    if totalHoney < 0:
+        totalHoney = 0
+        if population < 0:
+            population = 0
+
+        if defense < 0:
+            defense = 0
+    population = int(population)
+    defense = int(defense)
     return forage_pop, population, defense, totalHoney
 
         
