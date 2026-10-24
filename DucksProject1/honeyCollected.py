@@ -65,7 +65,7 @@ def flowerMultiplier_calc(event):
         flowerMultiplier = 1.0
 
     else:
-        flowerMultiplier = 1.0
+        flowerMultiplier = 1.5
     
     
     return flowerMultiplier
