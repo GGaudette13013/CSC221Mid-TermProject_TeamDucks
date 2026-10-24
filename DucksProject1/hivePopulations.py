@@ -1,7 +1,7 @@
 '''
 Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
-Program name: envEvent.py
-Description:  
+Program name: hivePopulations.py
+Description: Manages the beehive population by tracking the number of bees and updating the population throughout the simulation.
 '''
 # how does this work with the global - this might cause some bugs
 totalPopulation = 0
@@ -24,13 +24,6 @@ def totalPopulation_accumulator(population, day, additionalPop, runningPopulatio
     return runningPopulation
 
 
-
-#def createBeesPopulationAddition(population, totalPopulation):
-    #population is from task input
-    #totalPopulation is from main
-    #Created_bees = Created_bees
-    # I think we can scrap this function
-    #return totalPopulation
     
     
     

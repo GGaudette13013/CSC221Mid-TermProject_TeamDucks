@@ -16,14 +16,6 @@ OTHER_BEES_CONSUMPTION = 0.00025
 flowerMultiplier = 1.0
 totalHoney = 0
 
-'''
-Starting values:
-
-Open to change later but this is more of a place holder for now; I have plans to change this later on.
-'''
-
-
-
 def totalHoney_calc(day, nethoney, starterHoney, totalHoney):
     if day == 1:
         totalHoney = starterHoney + nethoney

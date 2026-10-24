@@ -1,7 +1,7 @@
 '''
 Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
 Program name: envEvent.py
-Description:  
+Description:  Generates random environmental events that affect the beehive's honey production, population, and defense.
 '''
 from random import randint
 
@@ -16,7 +16,6 @@ def event_randomizer():
     
     return event
     
-    #IF YOU SEE THIS IT MEANS GAVIN FUNCTION USING GIT
 
 
 

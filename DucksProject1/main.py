@@ -1,7 +1,7 @@
 '''
 Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
 Program name: main.py
-Description:  
+Description:Runs the main beehive simulator, manages player choices, and updates the hive's population, honey supply, and daily events.
 '''
 
 from DucksProject1 import welcome_introduction, envEvent

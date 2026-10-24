@@ -1,7 +1,7 @@
 '''
 Name: Gideon Gaudette, Gavin Goodwin, and Imanol Gonzalez-Hernandez
 Program name: simulation_mode#starter.py
-Description:  
+Description: Displays the beehive's current honey supply, population, defense, and days remaining during the simulation.
 '''
 from DucksProject1 import userInput
 from DucksProject1 import userTaskExecution
